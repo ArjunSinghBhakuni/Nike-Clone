@@ -1,12 +1,20 @@
 const express = require("express")
+const ProductModel = require("../model/ProductModel")
 
 
 const productController = express.Router()
 
 
-productController.get("/",(req,res)=>{
+productController.get("/", async(req,res)=>{
 
- res.send("products")
+ const products = await ProductModel.find()
+ console.log(products)
+ res.send(products)
+})
+productController.post("/",(req,res)=>{
+
+ const products = ProductModel.insertMany(req.body)
+ res.send(products)
 })
 
 module.exports = productController 

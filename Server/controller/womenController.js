@@ -1,12 +1,21 @@
 const express = require("express")
+const WomenModel = require("../model/WomenModel")
 
 
 const womenController = express.Router()
 
 
-womenController.get("/",(req,res)=>{
+womenController.get("/",async(req,res)=>{
 
- res.send("user")
+ const women = await WomenModel.find()
+ 
+ res.send(women)
+})
+
+womenController.post("/",(req,res)=>{
+
+ const women = WomenModel.insertMany(req.body)
+ res.send(women)
 })
 
 module.exports = womenController 

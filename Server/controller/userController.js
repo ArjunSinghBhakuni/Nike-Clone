@@ -1,12 +1,22 @@
-const express = require("express")
+const express = require("express");
+const UserModel = require("../model/UserModel");
 
+const userController = express.Router();
 
-const userController = express.Router()
+userController.post("/signup", (req, res) => {
+  const { firstName, lastName, email, password, gender } = req.body;
+  console.log(firstName, lastName, email, password, gender )
+  const users = new UserModel({
+    firstName,
+    lastName,
+    email,
+    password,
+    gender,
+  });
 
+  users.save()
+  res.send("user successfully created"
+  )
+});
 
-userController.get("/",(req,res)=>{
-
- res.send("user")
-})
-
-module.exports = userController 
+module.exports = userController;

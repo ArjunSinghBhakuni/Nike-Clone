@@ -1,5 +1,5 @@
 const express = require("express")
-const { connection } = require("mongoose")
+const { connection } =  require("./config/db")
 const kidController = require("./controller/kidController")
 const menController = require("./controller/menController")
 const productController = require("./controller/productController")
@@ -15,7 +15,7 @@ app.get("/",(req,res)=>{
 
 
 app.use("/user",userController)
-app.use("/product",productController)
+app.use("/products",productController)
 app.use("/men",menController)
 app.use("/women",womenController)
 app.use("/kid",kidController)
