@@ -19,7 +19,8 @@ const dispatch = useDispatch()
      {mens?.map((el,i)=>(
  <GridItem>
 
-     <Cards key={i}/>
+   
+<Cards key={i} {...el}/>
  </GridItem>
      ))}
     </Grid>

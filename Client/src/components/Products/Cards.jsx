@@ -51,7 +51,7 @@ function Rating({ rating, numReviews } ) {
  );
 }
 
-function Cards() {
+function Cards({title,description,category,price,size,color,rating,img}) {
  return (
    <Flex p={50} w="full" alignItems="center" justifyContent="center">
      <Box
@@ -72,7 +72,7 @@ function Cards() {
        )}
 
        <Image
-         src={data.imageURL}
+         src={img[0]}
          alt={`Picture of ${data.name}`}
          roundedTop="lg"
        />
@@ -92,7 +92,7 @@ function Cards() {
              as="h4"
              lineHeight="tight"
              isTruncated>
-             {data.name}
+              {title}
            </Box>
            <Tooltip
              label="Add to cart"
@@ -107,12 +107,12 @@ function Cards() {
          </Flex>
 
          <Flex justifyContent="space-between" alignContent="center">
-           <Rating rating={data.rating} numReviews={data.numReviews} />
+           <Rating rating={rating} numReviews={data.numReviews} />
            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
              <Box as="span" color={'gray.600'} fontSize="lg">
-               £
+             rs
              </Box>
-             {data.price.toFixed(2)}
+             {price}
            </Box>
          </Flex>
        </Box>

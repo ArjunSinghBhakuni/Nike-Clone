@@ -5,8 +5,10 @@ const MenModel = require("../model/MensModel")
 const menController = express.Router()
 
 
-menController.get("/", (req,res)=>{
-res.send("men")
+menController.get("/", async(req,res)=>{
+ const men = await MenModel.find()
+ 
+ res.send(men)
  
 })
 menController.post("/",(req,res)=>{
