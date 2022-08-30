@@ -8,7 +8,7 @@ const productController = express.Router()
 productController.get("/", async(req,res)=>{
 
  const products = await ProductModel.find()
- console.log(products)
+ 
  res.send(products)
 })
 productController.post("/",(req,res)=>{

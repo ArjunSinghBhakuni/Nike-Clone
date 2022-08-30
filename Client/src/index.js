@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider as ReduxProvider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+import { store } from './redux/store';
 import axios from "axios"
 
  axios.defaults.baseURL = "http://localhost:8080";
@@ -12,13 +14,13 @@ import axios from "axios"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <ReduxProvider store={store}> */}
+    <ReduxProvider store={store}>
       <BrowserRouter>
       <ChakraProvider  >
         <App />
       </ChakraProvider>
       </BrowserRouter>
-    {/* </ReduxProvider> */}
+    </ReduxProvider>
   </React.StrictMode>
 );
 

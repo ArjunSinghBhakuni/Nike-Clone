@@ -10,9 +10,9 @@ res.send("men")
  
 })
 menController.post("/",(req,res)=>{
-console.log(req.body)
+ 
  const men = MenModel.insertMany(req.body)
- console.log(men)
+ 
  res.send(men)
 })
 

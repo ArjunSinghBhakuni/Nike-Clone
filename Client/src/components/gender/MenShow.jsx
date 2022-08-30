@@ -1,21 +1,22 @@
 import React from 'react'
 import {Box} from "@chakra-ui/react"
-import Cards from './Cards'
+ 
 import {useEffect} from 'react'
-import { getProductsData } from '../../redux/AppReducer/action'
+import { getMenData } from '../../redux/AppReducer/action'
 import {useDispatch, useSelector} from 'react-redux'
 import {Grid,GridItem} from "@chakra-ui/react"
+import Cards from '../Products/Cards'
 
-const ProductShow = () => {
+const MenShow = () => {
 const dispatch = useDispatch()
- const products = useSelector((state)=>state.AppReducer.products)
+ const mens = useSelector((state)=>state.AppReducer.men)
  useEffect(() => {
-   dispatch(getProductsData())
+   dispatch(getMenData())
  }, [])
  
   return (
    <Grid templateColumns='repeat(3, 1fr)'>
-     {products?.map((el,i)=>(
+     {mens?.map((el,i)=>(
  <GridItem>
 
      <Cards key={i}/>
@@ -25,4 +26,4 @@ const dispatch = useDispatch()
   )
 }
 
-export default ProductShow
+export default MenShow
