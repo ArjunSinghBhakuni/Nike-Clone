@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Image,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -21,13 +22,14 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
-
+import {useNavigate} from "react-router-dom"
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
+ 
   return (
-    <Box>
-      <Flex
+    <Box    boxShadow = {"rgba(149, 157, 165, 0.2) 0px 8px 24px"}>
+      <Flex border={"1px solid red"}
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
@@ -50,15 +52,15 @@ export default function Navbar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}  >
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
+          
+           >
+          <Image h="50px" w="70px" src='https://i.postimg.cc/sDJwyWW1/adds.png'/>
           </Text>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex display={{ base: 'none', md: 'flex',lg:"flex" }}   ml={{ base: 'none', md: '20%',lg:"30%" }}  >
             <DesktopNav />
           </Flex>
         </Flex>
@@ -68,23 +70,16 @@ export default function Navbar() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
+          
           <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}>
-            Sign In
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
+            display={{ base: 'inline-flex', md: 'inline-flex' }}
+            fontSize={'m'}
+            fontWeight={500}
             color={'white'}
-            bg={'pink.400'}
+            bg= "black"
             href={'#'}
             _hover={{
-              bg: 'pink.300',
+              bg: 'black',
             }}>
             Sign Up
           </Button>
@@ -103,16 +98,22 @@ const DesktopNav = () => {
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
+  const navigate =  useNavigate()
+
+  const handleClick = (href)=>{
+navigate(href)
+  }
+
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} m="auto"   >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
-              <Link
+              <Link onClick={()=>handleClick(navItem.route)}
                 p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
+               
+                fontSize={'lg'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -120,24 +121,10 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}>
                 {navItem.label}
+
               </Link>
             </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}>
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
+ 
           </Popover>
         </Box>
       ))}
@@ -246,41 +233,19 @@ const MobileNavItem = ({ label, children, href } ) => {
 
 const NAV_ITEMS  = [
   {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
+    label: 'Products',
+    route: '/products',
   },
   {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
+    label: 'Men',
+    route: '/men',
   },
   {
-    label: 'Learn Design',
-    href: '#',
+    label: 'Women',
+    route: '/women',
   },
   {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'Kids',
+    route: '/kids',
   },
 ];
