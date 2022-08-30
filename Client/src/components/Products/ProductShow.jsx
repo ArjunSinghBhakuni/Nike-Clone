@@ -5,6 +5,7 @@ import {useEffect} from 'react'
 import { getProductsData } from '../../redux/AppReducer/action'
 import {useDispatch, useSelector} from 'react-redux'
 import {Grid,GridItem} from "@chakra-ui/react"
+ 
 
 const ProductShow = () => {
 const dispatch = useDispatch()
@@ -12,13 +13,17 @@ const dispatch = useDispatch()
  useEffect(() => {
    dispatch(getProductsData())
  }, [])
+
+
  
   return (
    <Grid templateColumns='repeat(3, 1fr)'>
      {products?.map((el,i)=>(
  <GridItem>
+ 
 
      <Cards key={i} {...el}/>
+ 
  </GridItem>
      ))}
     </Grid>

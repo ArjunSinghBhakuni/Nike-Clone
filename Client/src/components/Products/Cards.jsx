@@ -9,9 +9,13 @@ import {
  chakra,
  Tooltip,
 } from '@chakra-ui/react';
+import React from "react"
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 
+import {useDispatch, useSelector} from 'react-redux'
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+import { useEffect } from 'react';
 const data = {
  isNew: true,
  imageURL:
@@ -52,8 +56,15 @@ function Rating({ rating, numReviews } ) {
 }
 
 function Cards({title,description,category,price,size,color,rating,img}) {
- return (
-   <Flex p={50} w="full" alignItems="center" justifyContent="center">
+ 
+  const isLoaded = useSelector((state)=>state.AppReducer.notLoading)
+
+ 
+
+  return (
+    
+    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+     <Skeleton  isLoaded={isLoaded}>
      <Box
        bg={useColorModeValue('white', 'gray.800')}
        maxW="sm"
@@ -75,7 +86,7 @@ function Cards({title,description,category,price,size,color,rating,img}) {
          src={img[0]}
          alt={`Picture of ${data.name}`}
          roundedTop="lg"
-       />
+         />
 
        <Box p="6">
          <Box d="flex" alignItems="baseline">
@@ -117,6 +128,7 @@ function Cards({title,description,category,price,size,color,rating,img}) {
          </Flex>
        </Box>
      </Box>
+               </Skeleton>
    </Flex>
  );
 }

@@ -6,7 +6,7 @@ const intialState = {
  men:[],
  women:[],
  kids:[],
- isLoading : false,
+ notLoading : true,
  isError : false
 }
 
@@ -17,7 +17,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.MEN_DATA_LOADING: {
    return{
     ...state,
-    isLoading:true,
+    notLoading:false,
     isError:false
    }
   }
@@ -25,14 +25,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     men:payload,
-    isLoading:false,
+    notLoading:true,
     isError:false
    }
   }
   case types.MEN_DATA_FAILURE: {
    return{
     ...state,
-    isLoading:false,
+    notLoading:true,
     isError:true
    }
   }
@@ -41,7 +41,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.PRODUCTS_DATA_LOADING: {
    return{
     ...state,
-    isLoading:true,
+    notLoading:false,
     isError:false
    }
   }
@@ -49,14 +49,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     products:payload,
-    isLoading:false,
+    notLoading:true,
     isError:false
    }
   }
   case types.PRODUCTS_DATA_FAILURE: {
    return{
     ...state,
-    isLoading:false,
+    notLoading:true,
     isError:true
    }
   }
@@ -65,7 +65,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.WOMEN_DATA_LOADING: {
    return{
     ...state,
-    isLoading:true,
+    notLoading:false,
     isError:false
    }
   }
@@ -73,14 +73,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     women:payload,
-    isLoading:false,
+    notLoading:true,
     isError:false
    }
   }
   case types.WOMEN_DATA_FAILURE: {
    return{
     ...state,
-    isLoading:false,
+    notLoading:true,
     isError:true
    }
   }
@@ -89,7 +89,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.KIDS_DATA_LOADING: {
    return{
     ...state,
-    isLoading:true,
+    notLoading:false,
     isError:false
    }
   }
@@ -97,14 +97,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     kids:payload,
-    isLoading:false,
+    notLoading:true,
     isError:false
    }
   }
   case types.KIDS_DATA_FAILURE: {
    return{
     ...state,
-    isLoading:false,
+    notLoading:true,
     isError:true
    }
   }
