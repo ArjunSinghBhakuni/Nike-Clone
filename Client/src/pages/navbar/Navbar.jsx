@@ -101,7 +101,7 @@ const DesktopNav = () => {
   const navigate =  useNavigate()
 
   const handleClick = (href)=>{
-navigate(href)
+navigate(`/products${href}`)
   }
 
   return (
@@ -234,7 +234,7 @@ const MobileNavItem = ({ label, children, href } ) => {
 const NAV_ITEMS  = [
   {
     label: 'Products',
-    route: '/products',
+    route: '',
   },
   {
     label: 'Men',

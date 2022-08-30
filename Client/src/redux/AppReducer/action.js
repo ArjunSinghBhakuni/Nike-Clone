@@ -5,7 +5,7 @@ export const getMenData = ()=>(dispatch)=>{
 
  dispatch({ type: types.MEN_DATA_LOADING });
   axios
-    .get("/men")
+    .get("/products/men")
     .then((r) => dispatch({ type: types.MEN_DATA_SUCCESS, payload: r.data }))
     .catch((e) => dispatch({ type: types.MEN_DATA_FAILURE}));
 
@@ -27,7 +27,7 @@ export const getProductsData = ()=>(dispatch)=>{
 
   dispatch({ type: types.WOMEN_DATA_LOADING });
    axios
-     .get("/women")
+     .get("/products/women")
      .then((r) => dispatch({ type: types.WOMEN_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.WOMEN_DATA_FAILURE}));
  
@@ -38,7 +38,7 @@ export const getProductsData = ()=>(dispatch)=>{
 
   dispatch({ type: types.KIDS_DATA_LOADING });
    axios
-     .get("/kids")
+     .get("/products/kids")
      .then((r) => dispatch({ type: types.KIDS_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.KIDS_DATA_FAILURE}));
  
