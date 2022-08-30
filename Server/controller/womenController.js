@@ -1,5 +1,5 @@
 const express = require("express")
-const WomenModel = require("../model/WomenModel")
+const WomenModel = require("../model/WomensModel")
 
 
 const womenController = express.Router()

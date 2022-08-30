@@ -4,7 +4,7 @@ const reqString = { type: String, required: true };
 const reqNumber = { type: Number, required: true };
 const reqArray = { type: Array, required: true };
 
-const kidSchema = new mongoose.Schema({
+const menSchema = new mongoose.Schema({
  title: reqString,
     gender: reqString,
     description: reqString,
@@ -19,6 +19,6 @@ const kidSchema = new mongoose.Schema({
 });
 
 
-const KidModel = mongoose.model("product",kidSchema)
+const MenModel = mongoose.model("men",menSchema)
 
-module.exports = KidModel;
+module.exports = MenModel;

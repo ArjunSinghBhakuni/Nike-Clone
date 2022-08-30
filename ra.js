@@ -1,367 +1,244 @@
 [
  {
- 
- "title": "Jordan Dri-FIT Sport",
- "gender": "Men",
- "description": "Men's T-Shirt",
- "category": "Cloths",
- "price": 3859,
- "size": [
- "Small",
- "Medium",
- "Large"
- ],
- "color": "Red",
- "rating": 3.9,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/29954374-a879-4f9a-a1f1-56262ed614a4/jordan-dri-fit-sport-t-shirt-n3lwwm.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/fafcdc31-4c67-4b9b-9b33-4fc2a81c6d54/jordan-dri-fit-sport-t-shirt-n3lwwm.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ac05b482-3c89-49f8-8767-209973b195b0/jordan-dri-fit-sport-t-shirt-n3lwwm.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d9ffb036-c53b-48b6-b32c-1d45ac16db85/jordan-dri-fit-sport-t-shirt-n3lwwm.png"
- ]
+     "_id": "6263884a789463d436443947",
+     "title": "Nike Air Force 1 '07 SE",
+     "gender": "Kids",
+     "description": "Girls' T-Shirt",
+     "category": "Cloths",
+     "price": 995,
+     "size": [
+         "Small",
+         "Medium",
+         "Large"
+     ],
+     "color": "White",
+     "rating": 4.2,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bed097c0-92e0-45d1-86b0-4cf5ef19e972/sportswear-older-t-shirt-52lrmn.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e446876e-8473-437b-8b74-6d9cdb8d9d81/sportswear-older-t-shirt-52lrmn.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1b3d3093-7763-482b-8a68-8c584926c594/sportswear-older-t-shirt-52lrmn.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f597dade-4ae5-4f4d-a2b2-12e206d6ec3b/sportswear-older-t-shirt-52lrmn.png"
+     ]
  },
  {
- 
- "title": "Nike Sportswear Max90",
- "gender": "Men",
- "description": "Men's T-Shirt",
- "category": "Cloths",
- "price": 3859,
- "size": [
- "Small",
- "Large"
- ],
- "color": "Blue",
- "rating": 3.1,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/511420ef-697a-49e7-9937-b6e69cffad43/sportswear-max90-t-shirt-v810Kp.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/11b7f388-e48d-4602-aff3-6917341e79f8/sportswear-max90-t-shirt-v810Kp.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c56e31c6-2160-4fe4-b1aa-68ac3b668e44/sportswear-max90-t-shirt-v810Kp.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/cd7a3c79-91d7-4303-bddb-9d4badc67303/sportswear-max90-t-shirt-v810Kp.png"
- ]
+     "_id": "6263884a789463d436443948",
+     "title": "Nike Dri-FIT Academy",
+     "gender": "Kids",
+     "description": "Girls' Football Top",
+     "category": "Cloths",
+     "price": 895,
+     "size": [
+         "Small",
+         "Medium"
+     ],
+     "color": "Red",
+     "rating": 4.1,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f9efd38c-29da-4ab7-a728-280941cda75c/dri-fit-academy-older-short-sleeve-football-top-JFSSPT.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ed75826b-5089-4a3a-acf7-04ae5aebb515/dri-fit-academy-older-short-sleeve-football-top-JFSSPT.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f8f45740-b049-4112-b366-37febddf9ca1/dri-fit-academy-older-short-sleeve-football-top-JFSSPT.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a7a6e285-9e6e-4f59-94dc-01d9b95e99f6/dri-fit-academy-older-short-sleeve-football-top-JFSSPT.png"
+     ]
  },
  {
- 
- "title": "Nike Pro Dri-FIT",
- "gender": "Men",
- "description": "Men's Short-Sleeve Top",
- "category": "Cloths",
- "price": 1999,
- "size": [
- "Medium",
- "Large"
- ],
- "color": "Green",
- "rating": 4.3,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/78931a42-171b-4a32-b9bb-e990d0ba708a/pro-dri-fit-short-sleeve-top-xrfWkz.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ed33dc0a-d111-428d-9026-eb7de80f3ac9/pro-dri-fit-short-sleeve-top-xrfWkz.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d6016705-e7ba-4449-8789-43a494a6ea8f/pro-dri-fit-short-sleeve-top-xrfWkz.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/70380bf4-190c-49ed-8399-19eeb738db9d/pro-dri-fit-short-sleeve-top-xrfWkz.png"
- ]
+     "_id": "6263884a789463d436443949",
+     "title": "Nike pro T-Shirt",
+     "gender": "Kids",
+     "description": "Girls' T-Shirt",
+     "category": "Cloths",
+     "price": 1195,
+     "size": [
+         "Medium",
+         "Large"
+     ],
+     "color": "Black",
+     "rating": 4.4,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7072015c-ce20-4d91-8e5b-4f84348a3b3c/older-t-shirt-V5qgRM.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d4720f62-8154-4260-9a19-fc3c58c9283a/older-t-shirt-V5qgRM.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/7044bd92-d331-4315-84a3-c6e180a41c8d/older-t-shirt-V5qgRM.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1e42b104-fbe0-4364-9014-402f60fef50b/older-t-shirt-V5qgRM.png"
+     ]
  },
  {
- 
- "title": "Nike ESC",
- "gender": "Men",
- "description": "Men's Woven Shirt",
- "category": "Cloths",
- "price": 4999,
- "size": [
- "Small",
- "Large"
- ],
- "color": "White",
- "rating": 3.2,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/931b43ac-fd2e-451b-a2bf-138a7f5cda52/esc-woven-shirt-X106Bb.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a2064801-e814-41c7-94bc-f13ce30cdd79/esc-woven-shirt-X106Bb.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/76777a38-8e51-4417-8080-48ffd29136aa/esc-woven-shirt-X106Bb.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/6b405d30-7958-4e8b-9fc6-97d5a0734e16/esc-woven-shirt-X106Bb.png"
- ]
+     "_id": "6263884a789463d43644394a",
+     "title": "Nike Dri-FIT Victory",
+     "gender": "Kids",
+     "description": "Boys' Golf Polo",
+     "category": "Cloths",
+     "price": 1495,
+     "size": [
+         "Small",
+         "Medium",
+         "Large"
+     ],
+     "color": "Green",
+     "rating": 4.8,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b12c9d5c-3d0c-439c-9939-09ad78f6373e/dri-fit-victory-older-golf-polo-FbWd8B.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a6d099f2-67e2-40a6-90b0-3e4fcf40cd38/dri-fit-victory-older-golf-polo-FbWd8B.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/bec1b7fa-cbf7-4333-b06d-c23ea7109df2/dri-fit-victory-older-golf-polo-FbWd8B.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/8107c59c-a36e-4a7b-9ed4-94ddc8d9dcb1/dri-fit-victory-older-golf-polo-FbWd8B.png"
+     ]
  },
  {
- 
- "title": "Jordan Essentials",
- "gender": "Men",
- "description": "Men's T-Shirt",
- "category": "Cloths",
- "price": 2599,
- "size": [
- "Medium"
- ],
- "color": "White",
- "rating": 4.3,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8f2fa3a2-651d-475b-a94b-4aa8301effbb/jordan-essentials-t-shirt-JQXCdV.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/bde017b7-f7ce-4cd9-9a8e-fc480959ea09/jordan-essentials-t-shirt-JQXCdV.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4368b18d-e3a1-4946-a117-ff3b7c1e7c26/jordan-essentials-t-shirt-JQXCdV.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/7ac2aaa6-c2e9-489e-9ed0-5ea0be6f75ee/jordan-essentials-t-shirt-JQXCdV.png"
- ]
+     "_id": "6263884a789463d43644394b",
+     "title": "Nike Pro Dri-FIT",
+     "gender": "Kids",
+     "description": "Boys Training Top",
+     "category": "Cloths",
+     "price": 1695,
+     "size": [
+         "Small",
+         "Large"
+     ],
+     "color": "Blue",
+     "rating": 4.1,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d08a3fad-11f5-4031-af20-fb08be3dff17/pro-dri-fit-older-short-sleeve-training-top-S71vqC.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5a7f9c48-5261-42cc-b02a-9fc4d6e3d169/pro-dri-fit-older-short-sleeve-training-top-S71vqC.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e7536d0a-c7f6-48fe-8b21-129a35776add/pro-dri-fit-older-short-sleeve-training-top-S71vqC.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c9dfae0a-53b6-4cd8-9f0f-cbbcb1dae2d9/pro-dri-fit-older-short-sleeve-training-top-S71vqC.png"
+     ]
  },
  {
- 
- "title": "Nike Dri-FIT Standard Issue",
- "gender": "Men",
- "description": "Men's Basketball Hoodie",
- "category": "Cloths",
- "price": 6599,
- "size": [
- "Small",
- "Medium"
- ],
- "color": "Green",
- "rating": 4.6,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cc20de69-f982-4662-ad93-a709ea7443ad/dri-fit-standard-issue-basketball-hoodie-qkBG3N.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c70a3650-1102-4d92-9953-43db6fff4bdf/dri-fit-standard-issue-basketball-hoodie-qkBG3N.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/67e14ad1-4a4c-40db-afaf-7f057f002e87/dri-fit-standard-issue-basketball-hoodie-qkBG3N.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/2208e6ea-23f8-4b22-a2cd-fb646f6f9e25/dri-fit-standard-issue-basketball-hoodie-qkBG3N.png"
- ]
+     "_id": "6263884a789463d43644394c",
+     "title": "Nike Sportswear",
+     "gender": "Kids",
+     "description": "Boys Seasonal Printed Top",
+     "category": "Cloths",
+     "price": 2317,
+     "size": [
+         "Small",
+         "Medium"
+     ],
+     "color": "White",
+     "rating": 4.3,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8a2eb0df-0a6a-4fef-8e69-3e4a5858f3b3/sportswear-older-seasonal-printed-top-BWV1Jg.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/990c1df6-b69a-4bd5-bdcf-cc359508814b/sportswear-older-seasonal-printed-top-BWV1Jg.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5caf0fe7-8a6c-43c4-aa46-8a18a5cb39d9/sportswear-older-seasonal-printed-top-BWV1Jg.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/60ee3adf-9cae-48e5-9777-2e69195010c3/sportswear-older-seasonal-printed-top-BWV1Jg.png"
+     ]
  },
  {
- 
- "title": "Nike Shorts",
- "gender": "Men",
- "description": "Men's 2-in-1 Shorts",
- "category": "Cloths",
- "price": 4199,
- "size": [
- "Small",
- "Medium",
- "Large"
- ],
- "color": "Black",
- "rating": 3.5,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/611fef89-d44c-4770-bf13-986db4df85ea/2-in-1-shorts-ScqnT4.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d340631b-fcde-4eb3-aef4-259c44d7c902/2-in-1-shorts-ScqnT4.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3fc6e54b-c57c-4a91-99dc-d60e7cb1fd23/2-in-1-shorts-ScqnT4.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/14d7e75a-bd38-4ed8-bb18-7520eb81dd50/2-in-1-shorts-ScqnT4.png"
- ]
+     "_id": "6263884a789463d43644394d",
+     "title": "Nike Force 1",
+     "gender": "Kids",
+     "description": "Baby & Toddler Shoes",
+     "category": "Shoes",
+     "price": 2995,
+     "size": [
+         "Small"
+     ],
+     "color": "White",
+     "rating": 3.9,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cac2c91a-460f-42d8-9747-da96f2fe0d23/force-1-shoes-PfZNkZ.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/40097eb7-b310-4d28-ac08-20f48b572bab/force-1-shoes-PfZNkZ.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/cc733a7b-3a49-4ef0-8ea4-c245fa8a63ef/force-1-shoes-PfZNkZ.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3ef0f74c-d16e-4102-8f2d-3f94dd7c1042/force-1-shoes-PfZNkZ.png"
+     ]
  },
  {
- 
- "title": "Nike ESC",
- "gender": "Men",
- "description": "Men's Worker Trousers",
- "category": "Cloths",
- "price": 7999,
- "size": [
- "Medium",
- "Large"
- ],
- "color": "Black",
- "rating": 4.1,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/3d577270-ec4b-4777-959c-40a6f6b6828f/esc-worker-trousers-BlJZD3.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e2e77983-0799-4ca0-a922-f5a41a7b406a/esc-worker-trousers-BlJZD3.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/8b734d47-c2ec-43d7-a226-0fbeb14aa5a1/esc-worker-trousers-BlJZD3.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/25273c0a-e5ff-4c37-8fe0-3443546d57d2/esc-worker-trousers-BlJZD3.png"
- ]
+     "_id": "6263884a789463d43644394e",
+     "title": "Nike Air Force",
+     "gender": "Kids",
+     "description": "Older Kids' Shoes",
+     "category": "Shoes",
+     "price": 5995,
+     "size": [
+         "Small",
+         "Medium",
+         "Large"
+     ],
+     "color": "Black",
+     "rating": 4.1,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/06bf8616-d3f9-4398-aba9-efd35aca4307/air-force-1-crater-next-nature-older-shoes-L22xFl.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/94de52fd-87df-4561-bac8-c1ea19b45795/air-force-1-crater-next-nature-older-shoes-L22xFl.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e180493b-58b0-4d5e-9ce9-df1449b6066d/air-force-1-crater-next-nature-older-shoes-L22xFl.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/cb1ea24f-8ae3-40b7-8621-0704c9189f7c/air-force-1-crater-next-nature-older-shoes-L22xFl.png"
+     ]
  },
  {
- 
- "title": "Nike Dri-FIT Challenger",
- "gender": "Men",
- "description": "Men's Woven Running Trousers",
- "category": "Cloths",
- "price": 3595,
- "size": [
- "Small",
- "Medium"
- ],
- "color": "Blue",
- "rating": 3.3,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e7995547-eb31-40d7-a5f9-0c6228604e81/dri-fit-challenger-woven-running-trousers-xv3kZX.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/afa1665b-b599-436a-9649-94ecd9e77cc2/dri-fit-challenger-woven-running-trousers-xv3kZX.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1966e401-7b33-433d-815b-0d841d33243e/dri-fit-challenger-woven-running-trousers-xv3kZX.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3e01f140-85e9-40ed-a466-19ad2e825ac7/dri-fit-challenger-woven-running-trousers-xv3kZX.png"
- ]
+     "_id": "6263884a789463d43644394f",
+     "title": "Nike Revolution 6",
+     "gender": "Kids",
+     "description": "Younger Kids' Shoes",
+     "category": "Shoes",
+     "price": 3495,
+     "size": [
+         "Small",
+         "Medium"
+     ],
+     "color": "Blue",
+     "rating": 4.5,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7e2b0969-0655-4833-89c7-9ab2561bb67c/revolution-6-younger-shoes-d8d8lG.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4373cb85-54dd-4df2-89aa-19c7afb2e31b/revolution-6-younger-shoes-d8d8lG.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ce984bde-74e0-4a34-837b-2b03b66567a4/revolution-6-younger-shoes-d8d8lG.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/dbfe9de0-a26e-47f4-a282-9a7da85ad250/revolution-6-younger-shoes-d8d8lG.png"
+     ]
  },
  {
- 
- "title": "Nike Dunk High Retro SE",
- "gender": "Men",
- "description": "Men's Shoes",
- "category": "Shoes",
- "price": 10999,
- "size": [
- "Small",
- "Medium",
- "Large"
- ],
- "color": "Blue",
- "rating": 4.6,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2a617295-4b1a-46e1-91e2-6963fd252c59/dunk-high-retro-se-shoes-tXRLdK.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1af80254-b653-42f8-8702-61b39feca583/dunk-high-retro-se-shoes-tXRLdK.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/9142d4aa-ef07-40b9-bb64-0a057cf8a1a3/dunk-high-retro-se-shoes-tXRLdK.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/433f980c-d56b-43d2-8475-fa917e4f2a7b/dunk-high-retro-se-shoes-tXRLdK.png"
- ]
+     "_id": "6263884a789463d436443950",
+     "title": "Nike Air Force 1 LV8",
+     "gender": "Kids",
+     "description": "Younger Kids' Shoes",
+     "category": "Shoes",
+     "price": 6795,
+     "size": [
+         "Small",
+         "Medium"
+     ],
+     "color": "Red",
+     "rating": 4.9,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a68467cc-0885-43a9-a983-59b249623e56/air-force-1-lv8-older-shoes-wRzCfF.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/de5c9888-1013-47ba-bb7a-68c646175e6c/air-force-1-lv8-older-shoes-wRzCfF.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/df78323b-c69d-4355-ae8e-6267362d6ab0/air-force-1-lv8-older-shoes-wRzCfF.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/617abdf6-457f-4795-a332-af6051792ab3/air-force-1-lv8-older-shoes-wRzCfF.png"
+     ]
  },
  {
- 
- "title": "Nike Air Force 1 '07",
- "gender": "Men",
- "description": "Men's Shoes",
- "category": "Shoes",
- "price": 7450,
- "size": [
- "Small",
- "Large"
- ],
- "color": "White",
- "rating": 4.1,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoe-WrLlWX.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3cc96f43-47b6-43cb-951d-d8f73bb2f912/air-force-1-07-shoe-WrLlWX.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoe-WrLlWX.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/120a31b0-efa7-41c7-9a84-87b1e56ab9c3/air-force-1-07-shoe-WrLlWX.png"
- ]
+     "_id": "6263884a789463d436443951",
+     "title": "Nike Jr. Mercurial Dream",
+     "gender": "Kids",
+     "description": "Younger Kids' Shoes",
+     "category": "Shoes",
+     "price": 4495,
+     "size": [
+         "Medium",
+         "Large"
+     ],
+     "color": "Green",
+     "rating": 4.9,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7f137e2f-ba32-4c48-ad58-47420103c843/jr-mercurial-dream-speed-superfly-8-club-mg-younger-and-older-multi-ground-football-boot-J8N1d8.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1c654909-74be-4418-945c-9ce9d8b73791/jr-mercurial-dream-speed-superfly-8-club-mg-younger-and-older-multi-ground-football-boot-J8N1d8.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e31933de-0e12-4285-a2a5-bfd9bc371fb5/jr-mercurial-dream-speed-superfly-8-club-mg-younger-and-older-multi-ground-football-boot-J8N1d8.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/b0ad80fc-0c2c-462e-a2e6-22dba2273d88/jr-mercurial-dream-speed-superfly-8-club-mg-younger-and-older-multi-ground-football-boot-J8N1d8.png"
+     ]
  },
  {
- 
- "title": "Nike ZoomX Vaporfly Next% 2",
- "gender": "Men",
- "description": "Men's Road Racing Shoes",
- "category": "Shoes",
- "price": 19695,
- "size": [
- "Small",
- "Medium",
- "Large"
- ],
- "color": "Black",
- "rating": 4.8,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1622d34a-b828-4483-a974-74ca66bfb8b5/zoomx-vaporfly-next-2-road-racing-shoes-D4ntS0.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0248af3c-9a7a-409d-bfc5-d963280d4a1b/zoomx-vaporfly-next-2-road-racing-shoes-D4ntS0.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ca0ada64-ee55-41d4-b68d-bba8c577d8f8/zoomx-vaporfly-next-2-road-racing-shoes-D4ntS0.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5cfa0cf1-dbf5-48a0-9ede-bcc60fe5daec/zoomx-vaporfly-next-2-road-racing-shoes-D4ntS0.png"
- ]
- },
- {
- 
- "title": "LeBron 19",
- "gender": "Men",
- "description": "Basketball Shoes",
- "category": "Shoes",
- "price": 12595,
- "size": [
- "Medium",
- "Large"
- ],
- "color": "Red",
- "rating": 4.9,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/48a90a81-63d1-4e07-af8d-c6f09f9e5f54/lebron-19-basketball-shoes-pbfCF3.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/18e39e9d-bf62-4b05-a1b3-9a4852051313/lebron-19-basketball-shoes-pbfCF3.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/b0d2ee00-0ef1-4ff5-8042-52d110a34d44/lebron-19-basketball-shoes-pbfCF3.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f6af0766-4057-4dc0-ab9d-6c58c9e932c7/lebron-19-basketball-shoes-pbfCF3.png"
- ]
- },
- {
- 
- "title": "Nike Air Zoom Rival Fly 3",
- "gender": "Men",
- "description": "Men's Road Racing Shoes",
- "category": "Shoes",
- "price": 8999,
- "size": [
- "Small",
- "Medium"
- ],
- "color": "Red",
- "rating": 4.4,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/3a2feef9-aad1-463f-8e7f-3afc02729817/air-zoom-rival-fly-3-road-racing-shoes-Sct72w.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d6f66c09-092e-4026-bd28-5edaee1147e3/air-zoom-rival-fly-3-road-racing-shoes-Sct72w.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/fa319c0e-1888-4077-b3b5-a14384ac37ec/air-zoom-rival-fly-3-road-racing-shoes-Sct72w.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/59cc246f-5c61-412a-8638-2e313c4bf6ca/air-zoom-rival-fly-3-road-racing-shoes-Sct72w.png"
- ]
- },
- {
- 
- "title": "Nike Air Zoom SuperRep 3",
- "gender": "Men",
- "description": "Nike Air Zoom SuperRep 3",
- "category": "Shoes",
- "price": 7590,
- "size": [
- "Small",
- "Medium",
- "Large"
- ],
- "color": "Green",
- "rating": 3.7,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/243e7532-d741-4dce-9ab5-b08c492939ad/air-zoom-superrep-3-hiit-class-shoes-dSzQgH.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/79c057ab-4aa7-4d4e-9dcb-7a61d008c064/air-zoom-superrep-3-hiit-class-shoes-dSzQgH.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1cf80232-e7b6-464c-92e3-150e138d2860/air-zoom-superrep-3-hiit-class-shoes-dSzQgH.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/bfe7c203-6c7b-484a-b2d0-33e313ea51b3/air-zoom-superrep-3-hiit-class-shoes-dSzQgH.png"
- ]
- },
- {
- 
- "title": "Nike React Infinity Run 3 By You",
- "gender": "Men",
- "description": "Nike Air Zoom SuperRep 3",
- "category": "Shoes",
- "price": 13999,
- "size": [
- "Medium",
- "Large"
- ],
- "color": "Green",
- "rating": 4.1,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c5a64874-56de-4c25-8c02-ab9b45093b80/air-force-1-07-lx-shoe-h1bmxB.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/2cf31d1e-7626-415a-8c44-b4063c02c9a3/air-force-1-07-lx-shoe-h1bmxB.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d723b4eb-f677-421f-8068-89835d7aea35/air-force-1-07-lx-shoe-h1bmxB.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/be8f6135-e120-472d-af39-2a3eb9b52bad/air-force-1-07-lx-shoe-h1bmxB.png"
- ]
- },
- {
- 
- "title": "Air Jordan 13 Retro",
- "gender": "Men",
- "description": "Nike Air Zoom SuperRep 3",
- "category": "Shoes",
- "price": 18999,
- "size": [
- "Small",
- "Large"
- ],
- "color": "Blue",
- "rating": 4.5,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/53221d8e-cd47-4d1f-b275-24269fc6cc98/air-jordan-13-retro-shoes-xcK6vg.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/bb453390-144d-4995-8310-4218a9d532cc/air-jordan-13-retro-shoes-xcK6vg.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/607a79c6-99bc-4878-8a9e-71d586907ec8/air-jordan-13-retro-shoes-xcK6vg.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/49ceb8fb-4125-44bf-b027-fde8368e97ce/air-jordan-13-retro-shoes-xcK6vg.png"
- ]
- },
- {
- 
- "title": "Nike Air Max Dawn",
- "gender": "Men",
- "description": "Men's Shoes",
- "category": "Shoes",
- "price": 6999,
- "size": [
- "Small",
- "Medium",
- "Large"
- ],
- "color": "White",
- "rating": 3.9,
- "img": [
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7de8cc00-5e27-46ca-8bfc-3a92b0e94d58/air-max-dawn-shoe-VbDN84.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5c09b0c9-24c1-47a7-b7c6-2c1014d75e20/air-max-dawn-shoe-VbDN84.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f6d2f879-e7c3-4117-81ca-65131f654a49/air-max-dawn-shoe-VbDN84.png",
- "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/fc06b770-e5f6-444c-9be4-ced0551f21d7/air-max-dawn-shoe-VbDN84.png"
- ]
+     
+     "title": "Kyrie Infinity",
+     "gender": "Kids",
+     "description": "Younger Kids' Shoes",
+     "category": "Shoes",
+     "price": 6295,
+     "size": [
+         "Medium",
+         "Large"
+     ],
+     "color": "White",
+     "rating": 4.7,
+     "img": [
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a418899c-bb9a-4923-8d81-5a69a24ce0f7/kyrie-infinity-younger-shoes-1TqJGG.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0e265fd7-1f06-43b7-9922-fcd23ae08b1b/kyrie-infinity-younger-shoes-1TqJGG.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/455e7e9e-aeda-4a55-b1f3-e1009d025500/kyrie-infinity-younger-shoes-1TqJGG.png",
+         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a884f62d-2255-46ed-858b-842ac7d7a4a2/kyrie-infinity-younger-shoes-1TqJGG.png"
+     ]
  }
- ]
+]

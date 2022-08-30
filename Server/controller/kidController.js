@@ -1,5 +1,5 @@
 const express = require("express")
-const KidModel = require("../model/KidModel")
+const KidModel = require("../model/KidsModel")
 
 
 const kidController = express.Router()

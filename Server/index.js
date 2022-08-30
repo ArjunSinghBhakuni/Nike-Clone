@@ -18,7 +18,7 @@ app.use("/user",userController)
 app.use("/products",productController)
 app.use("/men",menController)
 app.use("/women",womenController)
-app.use("/kid",kidController)
+app.use("/kids",kidController)
 
 app.listen(8080,async()=>{
 
