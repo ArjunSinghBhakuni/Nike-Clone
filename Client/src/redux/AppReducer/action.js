@@ -44,3 +44,25 @@ export const getProductsData = ()=>(dispatch)=>{
  
  
  }
+
+ export const getCartData = ()=>(dispatch)=>{
+
+  dispatch({ type: types.CART_DATA_LOADING });
+   axios
+     .get("/cart")
+     .then((r) => dispatch({ type: types.CART_DATA_SUCCESS, payload: r.data }))
+     .catch((e) => dispatch({ type: types.CART_DATA_FAILURE}));
+ 
+ 
+ }
+
+ export const addCartData = (id)=>(dispatch)=>{
+console.log("id",id)
+  dispatch({ type: types.CART_DATA_LOADING });
+  return axios
+     .post("/cart",{id})
+     .then((r) => dispatch({ type: types.CART_DATA_SUCCESS, payload: r.data }))
+     .catch((e) => dispatch({ type: types.CART_DATA_FAILURE}));
+ 
+ 
+ }

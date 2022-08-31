@@ -16,6 +16,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import {useDispatch, useSelector} from 'react-redux'
 import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 import { useEffect } from 'react';
+import { addCartData } from '../../redux/AppReducer/action';
 const data = {
  isNew: true,
  imageURL:
@@ -62,11 +63,14 @@ function Rating({ rating, numReviews } ) {
  );
 }
 
-function Cards({title,description,category,price,size,color,rating,img}) {
- 
+function Cards({title,description,category,price,size,color,rating,img,_id}) {
+  const dispatch = useDispatch()
   const isLoaded = useSelector((state)=>state.AppReducer.notLoading)
 
- 
+ const handleCart =(id)=>{
+
+  dispatch(addCartData(id))
+ }
 
   return (
     
@@ -118,8 +122,8 @@ function Cards({title,description,category,price,size,color,rating,img}) {
              placement={'top'}
              color={'gray.800'}
              fontSize={'1.2em'}>
-             <chakra.a href={'#'} display={'flex'}>
-               <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+             <chakra.a   display={'flex'}>
+               <Icon onClick={()=>handleCart(_id)} as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
              </chakra.a>
            </Tooltip>
          </Flex>

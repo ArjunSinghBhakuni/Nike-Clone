@@ -6,6 +6,7 @@ const intialState = {
  men:[],
  women:[],
  kids:[],
+ cart:[],
  notLoading : true,
  isError : false
 }
@@ -109,6 +110,51 @@ const reducer =(state = intialState,{type,payload})=>{
    }
   }
 
+  case types.CART_DATA_LOADING: {
+   return{
+    ...state,
+    notLoading:false,
+    isError:false
+   }
+  }
+  case types.CART_DATA_SUCCESS: {
+   return{
+    ...state,
+    cart:payload,
+    notLoading:true,
+    isError:false
+   }
+  }
+  case types.CART_DATA_FAILURE: {
+   return{
+    ...state,
+    notLoading:true,
+    isError:true
+   }
+  }
+  case types.ADD_TO_CART_LOADING: {
+   return{
+    ...state,
+    notLoading:false,
+    isError:false
+   }
+  }
+  case types.ADD_TO_CART_SUCCESS: {
+   const carts =  [...state.cart,payload]
+   return{
+    ...state,
+    cart:carts,
+    notLoading:true,
+    isError:false
+   }
+  }
+  case types.ADD_TO_CART_FAILURE: {
+   return{
+    ...state,
+    notLoading:true,
+    isError:true
+   }
+  }
   default : {
    return state
   }

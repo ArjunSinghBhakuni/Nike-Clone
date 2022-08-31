@@ -22,10 +22,13 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+
+import { BsBag } from "react-icons/bs";
 import {useNavigate} from "react-router-dom"
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
+  const navigate =  useNavigate()
  
   return (
     <Box    boxShadow = {"rgba(149, 157, 165, 0.2) 0px 8px 24px"}>
@@ -81,8 +84,13 @@ export default function Navbar() {
             _hover={{
               bg: 'black',
             }}>
-            Sign Up
+            Sign Up 
           </Button>
+          <Box fontSize={"35px"}  onClick={()=>{
+            navigate("/cart")
+          }}>
+          <BsBag />
+            </Box>
         </Stack>
       </Flex>
 
