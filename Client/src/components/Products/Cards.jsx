@@ -16,7 +16,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import {useDispatch, useSelector} from 'react-redux'
 import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 import { useEffect } from 'react';
-import { addCartData } from '../../redux/AppReducer/action';
+import { addCartData, getCartData } from '../../redux/AppReducer/action';
 const data = {
  isNew: true,
  imageURL:
@@ -69,7 +69,7 @@ function Cards({title,description,category,price,size,color,rating,img,_id}) {
 
  const handleCart =(id)=>{
 
-  dispatch(addCartData(id))
+  dispatch(addCartData(id)).then((res)=>dispatch(getCartData()))
  }
 
   return (

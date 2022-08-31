@@ -7,10 +7,7 @@ import CartShow from '../../components/cart/CartShow'
 import { getCartData } from '../../redux/AppReducer/action'
 
 const Cart = () => {
-const dispatch = useDispatch()
- useEffect(()=>{
-dispatch(getCartData())
- },[])
+ 
 
  const CartData = useSelector((state)=>state.AppReducer.cart)
  console.log("CartData",CartData)

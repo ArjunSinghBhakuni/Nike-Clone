@@ -155,6 +155,55 @@ const reducer =(state = intialState,{type,payload})=>{
     isError:true
    }
   }
+
+  case types.COUNT_CART_LOADING: {
+   return{
+    ...state,
+    notLoading:false,
+    isError:false
+   }
+  }
+  case types.COUNT_CART_SUCCESS: {
+  
+   return{
+    ...state,
+    cart:payload,
+    notLoading:true,
+    isError:false
+   }
+  }
+  case types.COUNT_CART_FAILURE: {
+   return{
+    ...state,
+    notLoading:true,
+    isError:true
+   }
+  }
+
+  case types.DELETE_CART_LOADING: {
+   return{
+    ...state,
+    notLoading:false,
+    isError:false
+   }
+  }
+  case types.DELETE_CART_SUCCESS: {
+  
+   return{
+    ...state,
+    cart:payload,
+    notLoading:true,
+    isError:false
+   }
+  }
+  case types.DELETE_CART_FAILURE: {
+   return{
+    ...state,
+    notLoading:true,
+    isError:true
+   }
+  }
+
   default : {
    return state
   }

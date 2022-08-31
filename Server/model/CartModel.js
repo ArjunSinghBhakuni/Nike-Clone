@@ -11,6 +11,7 @@ const cartSchema = new mongoose.Schema({
     description: reqString,
     category: reqString,
     price: reqNumber,
+    oldprice:reqNumber,
     count:Number,
     size: reqArray,
     color: reqString,

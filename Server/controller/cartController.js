@@ -17,14 +17,15 @@ cartController.post("/", async(req, res) => {
  
   if(cart){
     const incCart = await CartModel.findOneAndUpdate({_id:cart._id},  { count: Number(cart.count)+1 })
- console.log("inc" ,incCart)
-    res.send(incCart)
+  const update =  await CartModel.findOneAndUpdate({_id:cart._id},  { price: Number(cart.price)+Number(cart.oldprice) })
+   
+  res.send(update)
 
  
   }
 else {
  
- console.log("bye")
+ 
    const products = await ProductModel.findOne({ _id: id });
    
    const {
@@ -34,6 +35,7 @@ else {
     description,
     category,
     price,
+   
     size,
     color,
     rating,
@@ -47,6 +49,7 @@ else {
     description,
     category,
     price,
+    oldprice:price,
     count:1,
     size,
     color,
@@ -59,30 +62,31 @@ else {
  }
 });
 
+ 
+
 cartController.post("/count", async(req, res) => {
- const cart = await CartModel.find()
- res.send(cart)
-});
-
-cartController.post("/", async(req, res) => {
   const { id,type } = req.body;
- 
- 
- 
-   if(type="inc"){
- const incCart = CartModel.findOneAndUpdate({productId:id},{count:count+1},{
-     new:true
-    })
-
-    return   res.send(incCart);
-   } else {
-    const decCart = CartModel.findOneAndUpdate({productId:id},{count:count-1},{
-     new:true
-    })
-
-    return   res.send(decCart);
+  const cart = await CartModel.findOne({_id:id})
+   if(type==="inc"){
+ const incCart = await CartModel.findOneAndUpdate({_id:id},  { count: Number(cart.count)+1 })
+   await CartModel.findOneAndUpdate({_id:id},  { price: Number(cart.price)+Number(cart.oldprice) })
+    const updatedCart = await CartModel.find()
+    return   res.send(updatedCart);
+   } else if(type==="dec"){
+    const decCart = await CartModel.findOneAndUpdate({_id:id},  { count: Number(cart.count)-1 })
+    await CartModel.findOneAndUpdate({_id:id},  { price: Number(cart.price)-Number(cart.oldprice) })
+    const updatedCart = await CartModel.find()
+    return   res.send(updatedCart);
    }
  
 })
 
+
+cartController.delete("/delete/:id",async(req,res)=>{
+  const { id } = req.params;
+ 
+   await CartModel.deleteOne({_id:id})
+  const updatedCart = await CartModel.find()
+  return   res.send(updatedCart);
+})
 module.exports = cartController;
