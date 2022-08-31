@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Login from './authentication/Login'
+import Signup from './authentication/Signup'
 import Cart from './Cart/Cart'
 import Homepage from './HomePage/Homepage'
 import Navbar from './navbar/Navbar'
@@ -19,6 +21,9 @@ const MainRoute = () => {
       <Route path='/products/women' element={<Women/>} />
       <Route path='/products/kids' element={<Kids/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/signup' element={<Signup/>} />
+      <Route path='/login' element={<Login/>} />
+      
     </Routes>
     </>
   )
