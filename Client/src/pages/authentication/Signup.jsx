@@ -13,6 +13,8 @@ import {
  Text,
  useColorModeValue,
  Link,
+ Radio,
+ RadioGroup,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
@@ -73,6 +75,15 @@ export default function Signup() {
                  </Button>
                </InputRightElement>
              </InputGroup>
+           </FormControl>
+           <FormControl id="" isRequired>
+           <FormLabel>Gender</FormLabel> <RadioGroup >
+      <Stack direction='row'>
+        <Radio value='male'>Male</Radio>
+        <Radio value='female'>Female</Radio>
+        
+      </Stack>
+    </RadioGroup>
            </FormControl>
            <Stack spacing={10} pt={2}>
              <Button

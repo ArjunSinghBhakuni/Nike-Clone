@@ -83,8 +83,30 @@ export default function Navbar() {
             href={'#'}
             _hover={{
               bg: 'black',
-            }}>
+
+            }}
+            onClick={()=>{
+              navigate("/signup")
+            }}
+            >
             Sign Up 
+          </Button>
+          <Button
+            display={{ base: 'inline-flex', md: 'inline-flex' }}
+            fontSize={'m'}
+            fontWeight={500}
+            color={'white'}
+            bg= "black"
+            href={'#'}
+            _hover={{
+              bg: 'black',
+
+            }}
+            onClick={()=>{
+              navigate("/login")
+            }}
+            >
+          Login 
           </Button>
           <Box fontSize={"35px"}  onClick={()=>{
             navigate("/cart")
