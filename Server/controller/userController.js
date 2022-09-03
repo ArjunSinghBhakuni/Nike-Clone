@@ -15,7 +15,7 @@ userController.post("/signup", (req, res) => {
   });
 
   users.save()
-  res.send("user successfully created"
+  res.send("user successfully created" 
   )
 });
 
