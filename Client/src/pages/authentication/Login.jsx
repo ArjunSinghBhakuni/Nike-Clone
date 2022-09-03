@@ -11,8 +11,22 @@ import {
  Image,
  Text,
 } from '@chakra-ui/react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux/AuthReducer/action';
 
 export default function Login() {
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+
+  const dispatch = useDispatch()
+  const handleSubmit =()=>{
+const payload ={
+  email,
+  password
+}
+dispatch(loginUser(payload))
+  }
  return (
    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
     <Flex flex={1}>
@@ -29,11 +43,11 @@ export default function Login() {
          <Heading fontSize={'2xl'}>Sign in to your account</Heading>
          <FormControl id="email">
            <FormLabel>Email address</FormLabel>
-           <Input type="email" />
+           <Input type="email" onChange={(e)=>setEmail(e.target.value)}/>
          </FormControl>
          <FormControl id="password">
            <FormLabel>Password</FormLabel>
-           <Input type="password" />
+           <Input type="password"  onChange={(e)=>setPassword(e.target.value)} />
          </FormControl>
          <Stack spacing={6}>
            <Stack
@@ -43,7 +57,9 @@ export default function Login() {
              <Checkbox>Remember me</Checkbox>
              <Link color={'blue.500'}>Forgot password?</Link>
            </Stack>
-           <Button colorScheme={'blue'} variant={'solid'}>
+           <Button colorScheme={'blue'} variant={'solid'} 
+           onClick={handleSubmit}
+           >
              Sign in
            </Button>
          </Stack>
