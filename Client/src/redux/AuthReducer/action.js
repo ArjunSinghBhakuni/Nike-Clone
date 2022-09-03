@@ -19,7 +19,7 @@ export const loginUser = (payload) => (dispatch) => {
 
     data: payload,
   })
-    .then((r) => dispatch({ type: types.LOGIN_SUCCESS, payload: r.token }))
+    .then((r) => dispatch({ type: types.LOGIN_SUCCESS, payload: r }))
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };
  

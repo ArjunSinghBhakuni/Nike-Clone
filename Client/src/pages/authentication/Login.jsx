@@ -25,7 +25,7 @@ const payload ={
   email,
   password
 }
-dispatch(loginUser(payload))
+dispatch(loginUser(payload)).then((res)=>console.log(res))
   }
  return (
    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
