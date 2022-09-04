@@ -6,23 +6,24 @@ export const signupUser = (params) => (dispatch) => {
 
   return axios
     .post("/user/signup", params)
-    .then((r) => dispatch({ type: types.SIGNUP_SUCCESS, payload: r.message }))
+    .then((r) =>
+      dispatch({ type: types.SIGNUP_SUCCESS, payload: r.data.message })
+    )
     .catch((err) => dispatch({ type: types.LOGIN_FAILURE }));
 };
 
-export const loginUser = (payload) => (dispatch) => {
+export const loginUser = (temp) => (dispatch) => {
   dispatch({ type: types.LOGIN_LOADING });
 
   return axios({
-    method: "post",
+    method: "POST",
     url: "/user/login",
-
-    data: payload,
+    data: temp,
   })
     .then((r) => {
-      console.log(r.data.token)
-      dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
-      localStorage.setItem("token", r.data.token);
+      
+   dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
+     
     })
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };

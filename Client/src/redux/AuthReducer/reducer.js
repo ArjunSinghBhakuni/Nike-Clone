@@ -1,8 +1,8 @@
 import * as types from "./actiontype";
 
 const intialState = {
-  isAuth:false,
-  token:localStorage.getItem("token") || "",
+  isAuth: false,
+  token: localStorage.getItem("token") || "",
   isLoading: false,
   isError: false,
 };
@@ -33,6 +33,7 @@ const reducer = (state = intialState, { type, payload }) => {
     }
 
     case types.LOGIN_LOADING: {
+      console.log("loading")
       return {
         ...state,
         isLoading: true,
@@ -40,6 +41,7 @@ const reducer = (state = intialState, { type, payload }) => {
       };
     }
     case types.LOGIN_SUCCESS: {
+      console.log("payload", payload)
       return {
         ...state,
         isLoading: false,

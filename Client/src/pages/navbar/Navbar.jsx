@@ -25,10 +25,13 @@ import {
 
 import { BsBag } from "react-icons/bs";
 import {useNavigate} from "react-router-dom"
+import { useSelector } from 'react-redux';
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+    const navigate =  useNavigate()
+// const isAuth = useSelector((state)=>state.AuthReducer.isAuth)
+// console.log(isAuth)
 
-  const navigate =  useNavigate()
  
   return (
     <Box    boxShadow = {"rgba(149, 157, 165, 0.2) 0px 8px 24px"}>

@@ -26,8 +26,8 @@ const payload ={
   email,
   password
 }
-dispatch(loginUser(payload)).then((res)=>console.log(res.token))
-navigate("/products")
+dispatch(loginUser(payload)).then((r)=>console.log("r",r))
+ 
   }
  return (
    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
