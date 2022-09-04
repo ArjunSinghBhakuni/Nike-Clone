@@ -5,6 +5,8 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CartShow from '../../components/cart/CartShow'
 import TotalPrice from '../../components/cart/TotalPrice'
+import { OrderSummary } from '../../components/order/OrderSummary'
+ 
 import { getCartData } from '../../redux/AppReducer/action'
 
 const Cart = () => {
@@ -21,7 +23,7 @@ const Cart = () => {
   <CartShow key={i} {...e}/>
   ))}
   </VStack>
-<TotalPrice key={CartData._id} CartData={CartData}/>
+<OrderSummary  key={CartData._id} CartData={CartData}/>
     </Flex>
   )
 }
