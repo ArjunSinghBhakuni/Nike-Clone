@@ -1,8 +1,8 @@
-import { Box, Divider, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, Text } from "@chakra-ui/react";
  
 
 
-export const OrderSummary  = ( {CartData}) => {
+export const OrderSummary  = ( {CartData,setTogle}) => {
  let totalPrice = CartData.reduce((a,ac)=>a+ac.price,0)
  console.log(totalPrice)
  let Quantity = CartData.reduce((a,ac)=>a+ac.count,0)
@@ -46,6 +46,7 @@ export const OrderSummary  = ( {CartData}) => {
                 <Text fontWeight={500} >₹ Totol after delelting.00</Text>
             </Flex>
 
+<Button onClick ={()=>setTogle(true)}>Checkout</Button>
             <Divider mb={'20px'} />
             </Box>
         </>
