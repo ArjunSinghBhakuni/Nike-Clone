@@ -4,8 +4,15 @@ import axios from "axios";
 export const getMenData = ()=>(dispatch)=>{
 
  dispatch({ type: types.MEN_DATA_LOADING });
-  axios
-    .get("/products/men")
+  axios({
+    method:"GET",
+    url:"/products/men",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+   
     .then((r) => dispatch({ type: types.MEN_DATA_SUCCESS, payload: r.data }))
     .catch((e) => dispatch({ type: types.MEN_DATA_FAILURE}));
 
@@ -15,8 +22,15 @@ export const getMenData = ()=>(dispatch)=>{
 export const getProductsData = ()=>(dispatch)=>{
 
   dispatch({ type: types.PRODUCTS_DATA_LOADING});
-   axios
-     .get("/products")
+   axios({
+    method:"GET",
+    url:"/products",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+     
      .then((r) => dispatch({ type: types.PRODUCTS_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.PRODUCTS_DATA_FAILURE}));
  
@@ -26,8 +40,15 @@ export const getProductsData = ()=>(dispatch)=>{
  export const getWomenData = ()=>(dispatch)=>{
 
   dispatch({ type: types.WOMEN_DATA_LOADING });
-   axios
-     .get("/products/women")
+   axios({
+    method:"GET",
+    url:"/products/women",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+      
      .then((r) => dispatch({ type: types.WOMEN_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.WOMEN_DATA_FAILURE}));
  
@@ -37,8 +58,15 @@ export const getProductsData = ()=>(dispatch)=>{
  export const getKidsData = ()=>(dispatch)=>{
 
   dispatch({ type: types.KIDS_DATA_LOADING });
-   axios
-     .get("/products/kids")
+   axios({
+    method:"GET",
+    url:"/products/kids",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+    
      .then((r) => dispatch({ type: types.KIDS_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.KIDS_DATA_FAILURE}));
  
@@ -48,8 +76,15 @@ export const getProductsData = ()=>(dispatch)=>{
  export const getCartData = ()=>(dispatch)=>{
 
   dispatch({ type: types.CART_DATA_LOADING });
-   axios
-     .get("/cart")
+   axios({
+    method:"GET",
+    url:"/cart",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+    
      .then((r) => dispatch({ type: types.CART_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.CART_DATA_FAILURE}));
  
@@ -59,8 +94,16 @@ export const getProductsData = ()=>(dispatch)=>{
  export const addCartData = (id)=>(dispatch)=>{
 console.log("id",id)
   dispatch({ type: types.CART_DATA_LOADING });
-  return axios
-     .post("/cart",{id})
+  return axios ({
+    method:"POST",
+    url:"/cart",
+    data: {id } ,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+    //  .post("/cart",{id})
      .then((r) => dispatch({ type: types.CART_DATA_SUCCESS, payload: r.data }))
      .catch((e) => dispatch({ type: types.CART_DATA_FAILURE}));
  
@@ -71,7 +114,17 @@ console.log("id",id)
   console.log("id",id)
     dispatch({ type: types.CART_DATA_LOADING });
     return axios
-       .post("/cart/count",{id,type})
+    ({
+      method:"POST",
+      url:"/cart/count",
+     
+      data: {id,type} ,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization' : `Bearer ${localStorage.getItem("token")}`
+      },
+    })
+       
        .then((r) => dispatch({ type: types.CART_DATA_SUCCESS, payload: r.data }))
        .catch((e) => dispatch({ type: types.CART_DATA_FAILURE}));
    
@@ -82,7 +135,16 @@ console.log("id",id)
     console.log("id",id)
       dispatch({ type: types.CART_DATA_LOADING });
       return axios
-         .delete(`/cart/delete/${id}`)
+      ({
+        method:"DELETE",
+        url:`/cart/delete/${id}`,
+       
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization' : `Bearer ${localStorage.getItem("token")}`
+        },
+      })
+        //  .delete(`/cart/delete/${id}`)
          .then((r) => dispatch({ type: types.CART_DATA_SUCCESS, payload: r.data }))
          .catch((e) => dispatch({ type: types.CART_DATA_FAILURE}));
      

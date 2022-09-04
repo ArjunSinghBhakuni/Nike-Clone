@@ -6,9 +6,9 @@ export const signupUser = (params) => (dispatch) => {
 
   return axios
     .post("/user/signup", params)
-    .then((r)=>dispatch({ type: types.SIGNUP_SUCCESS, payload: r.message }))
-    .catch((err)=>dispatch({ type: types.LOGIN_FAILURE }))
-}
+    .then((r) => dispatch({ type: types.SIGNUP_SUCCESS, payload: r.message }))
+    .catch((err) => dispatch({ type: types.LOGIN_FAILURE }));
+};
 
 export const loginUser = (payload) => (dispatch) => {
   dispatch({ type: types.LOGIN_LOADING });
@@ -19,7 +19,10 @@ export const loginUser = (payload) => (dispatch) => {
 
     data: payload,
   })
-    .then((r) => dispatch({ type: types.LOGIN_SUCCESS, payload: r }))
+    .then((r) => {
+      console.log(r.data.token)
+      dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
+      localStorage.setItem("token", r.data.token);
+    })
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };
- 

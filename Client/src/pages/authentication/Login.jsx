@@ -11,21 +11,23 @@ import {
  Image,
  Text,
 } from '@chakra-ui/react';
+
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/AuthReducer/action';
-
+import {Link as RouterLink,useNavigate} from "react-router-dom"
 export default function Login() {
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
-
+  const [email,setEmail] = useState("123@gmail.com")
+  const [password,setPassword] = useState("123")
+const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleSubmit =()=>{
 const payload ={
   email,
   password
 }
-dispatch(loginUser(payload)).then((res)=>console.log(res))
+dispatch(loginUser(payload)).then((res)=>console.log(res.token))
+navigate("/products")
   }
  return (
    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
@@ -43,11 +45,11 @@ dispatch(loginUser(payload)).then((res)=>console.log(res))
          <Heading fontSize={'2xl'}>Sign in to your account</Heading>
          <FormControl id="email">
            <FormLabel>Email address</FormLabel>
-           <Input type="email" onChange={(e)=>setEmail(e.target.value)}/>
+           <Input type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
          </FormControl>
          <FormControl id="password">
            <FormLabel>Password</FormLabel>
-           <Input type="password"  onChange={(e)=>setPassword(e.target.value)} />
+           <Input value={password} type="password"  onChange={(e)=>setPassword(e.target.value)} />
          </FormControl>
          <Stack spacing={6}>
            <Stack
@@ -65,7 +67,13 @@ dispatch(loginUser(payload)).then((res)=>console.log(res))
          </Stack>
          <Stack pt={6}>
              <Text align={'center'}>
-               Not Have Account <Link color={'blue.400'}>Signup</Link>
+ 
+               Not Have Account  <Link  color={'blue.400'}> 
+               <RouterLink to='/signup'>
+
+               Signup
+               </RouterLink>
+               </Link>
              </Text>
            </Stack>
        </Stack>
