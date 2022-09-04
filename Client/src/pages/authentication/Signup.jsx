@@ -45,7 +45,7 @@ export default function Signup() {
 
   const handleSubmit = (Event) => {
     Event.preventDefault();
-    console.log(form);
+     
     dispatch(signupUser(form)).then((r)=> 
     {
 

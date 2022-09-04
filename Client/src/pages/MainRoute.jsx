@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Login from './authentication/Login'
 import Signup from './authentication/Signup'
 import Cart from './Cart/Cart'
+import Checkout from './checkout/Checkout'
 import Homepage from './HomePage/Homepage'
 import Navbar from './navbar/Navbar'
 import Kids from './Products/Kids'
@@ -23,6 +24,7 @@ const MainRoute = () => {
       <Route path='/cart' element={<Cart/>} />
       <Route path='/signup' element={<Signup/>} />
       <Route path='/login' element={<Login/>} />
+      <Route path='/checkout' element={<Checkout/>} />
       
     </Routes>
     </>
