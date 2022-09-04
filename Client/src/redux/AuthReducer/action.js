@@ -23,7 +23,7 @@ export const loginUser = (temp) => (dispatch) => {
     .then((r) => {
       
    dispatch({ type: types.LOGIN_SUCCESS, payload: r.data.token });
-     
+     localStorage.setItem("token",r.data.token)
     })
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };
