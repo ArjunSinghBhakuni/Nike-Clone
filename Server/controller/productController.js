@@ -11,6 +11,14 @@ productController.get("/", async(req,res)=>{
  
  res.send(products)
 })
+productController.get("/:id", async(req,res)=>{
+
+ const {id} = req.params
+ 
+ const product = await ProductModel.findOne({_id:id})
+ console.log("product",product)
+ res.send(product)
+})
 productController.post("/",(req,res)=>{
 
  const products = ProductModel.insertMany(req.body)
@@ -34,5 +42,7 @@ productController.get("/kids", async(req,res)=>{
  
  res.send(products)
 })
+
+ 
 
 module.exports = productController 

@@ -6,7 +6,9 @@ import {
   Flex,
   Image,
   Spinner,
+  Badge,
   Stack,
+  Icon,
   Text,
   Tooltip,
 } from "@chakra-ui/react";
@@ -18,7 +20,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
  
  import "./product.css"
-
+import { addCartData, getCartData } from "../../redux/AppReducer/action";
+import { FiShoppingCart } from 'react-icons/fi';
 const ToolTip = styled.i`
   font-size: 12px;
   cursor: pointer;
@@ -96,6 +99,15 @@ const CardCount = styled.div`
 // };
 
 const AllProduct = ({ title,description,category,price,size,color,rating,img,_id }) => {
+  const dispatch = useDispatch()
+  const isLoaded = useSelector((state)=>state.AppReducer.notLoading)
+
+ const handleCart =(id)=>{
+
+  dispatch(addCartData(id)).then((res)=>dispatch(getCartData()))
+ }
+
+  
   // const [countValue, setCountValue] = useState(0);
   // const { id } = useParams();
   // const dispatch = useDispatch();
@@ -209,9 +221,10 @@ const AllProduct = ({ title,description,category,price,size,color,rating,img,_id
         </Link>
       </Box>
       <Box
-        h={"42px"}
+
+        p="10px 0px"
         // border={"1px solid blue"}
-        fontSize="14px"
+        fontSize="20px"
         fontWeight={"400"}
         lineHeight="20px"
         color={"#212121"}
@@ -312,6 +325,16 @@ const AllProduct = ({ title,description,category,price,size,color,rating,img,_id
 
             <Text fontSize={"16px"}> {price}</Text>
           </Flex>
+          <Tooltip
+             label="Add to cart"
+             bg="white"
+             placement={'top'}
+             color={'gray.800'}
+             fontSize={'1.2em'}>
+             <chakra.a   display={'flex'}>
+               <Icon onClick={()=>handleCart(_id)} as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+             </chakra.a>
+           </Tooltip>
           {/* <Stack>
             {countValue == 0 ? (
               <AddToCartBtn

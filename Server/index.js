@@ -8,6 +8,7 @@ const userController = require("./controller/userController");
 const cors = require("cors");
 const cartController = require("./controller/cartController");
 const authentication = require("./middleware/authentication");
+const singleProductController = require("./controller/singleProductController");
 const app = express();
 
 app.use(express.json());
@@ -17,8 +18,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userController);
- app.use(authentication)
+//  app.use(authentication)
 app.use("/products", productController);
+ 
  
 app.use("/cart",cartController)
 

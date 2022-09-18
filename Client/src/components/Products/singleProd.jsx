@@ -9,82 +9,69 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import alldata from "./alldata";
+ 
 import { StarIcon } from "@chakra-ui/icons";
 import { BiRupee } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addItemToCartAPI,
-  getCartItemAPI,
-  removeItemFromCartAPI,
-  updateCartItemAPI,
-} from "../../store/cart/cart.actions";
-import {
-  getSingleProductAPI,
-  getAllProductsAPI,
-} from "../../store/newProduct/products.actions";
+import { addCartData, getCartData } from "../../redux/AppReducer/action";
+import axios from "axios";
+ 
+ 
 //import { fetchdata } from "../../store/newProduct/products.actions";
 const SingleProd = () => {
-  const dispatch = useDispatch();
-  const [countValue, setCountValue] = useState(1);
-  const {
-    data: cartData,
-    addCartItem,
-    updateCartItem,
-  } = useSelector((state) => state.cart);
-  const { data: singleProduct, loading: singleProductLoading } = useSelector(
-    (state) => state.products.singleProduct
-  );
-  const { id } = useParams();
+  // const dispatch = useDispatch();
+  // const [countValue, setCountValue] = useState(1);
+  // const {
+  //   data: cartData,
+  //   addCartItem,
+  //   updateCartItem,
+  // } = useSelector((state) => state.cart);
+  // const { data: singleProduct, loading: singleProductLoading } = useSelector(
+  //   (state) => state.products.singleProduct
+  // );
+  // const { id } = useParams();
 
-  useEffect(() => {
-    window.scroll(0, 0);
-    dispatch(getSingleProductAPI(id));
-  }, [getSingleProductAPI, dispatch, id]);
+  // useEffect(() => {
+  //   window.scroll(0, 0);
+  //   dispatch(getSingleProductAPI(id));
+  // }, [getSingleProductAPI, dispatch, id]);
 
-  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  // const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  const {id} = useParams()
+   console.log("id",id)
+  const dispatch = useDispatch()
+  const isLoaded = useSelector((state)=>state.AppReducer.notLoading)
 
-  const handleAddToCart = (item, value) => {
-    const addData = {
-      _productId: item._id,
-      productName: item.productName,
-      count: Number(value) || 1,
-      prodHighlights: item.prodHighlights,
-      longDesc: item.longDesc,
-      imageUrl: item.imageUrl,
-      shortDesc: item.shortDesc,
-      ratings: item.ratings,
-      numberOfRatings: item.numberOfRatings,
-      strikedPrice: item.strikedPrice,
-      price: item.price,
-      discount: item.discount,
-      brand: item.brand,
-    };
-    let ans = cartData.filter((data) => data._productId == item._id);
-    // console.log("ans is:", ans);
-    if (ans.length === 0) {
-      dispatch(addItemToCartAPI(addData));
-    } else {
-      const payload = {
-        cartId: ans[0]._id,
-        _productId: ans[0]._productId,
-        newCount: Number(value),
-      };
-      dispatch(updateCartItemAPI(payload));
-    }
-  };
+ 
 
   //Below useEffect is used to fetch all cart items
-  useEffect(() => {
-    dispatch(getCartItemAPI());
-  }, [dispatch, getCartItemAPI]);
+ let singleProduct;
+ const getSingleProduct =()=>{
+  axios({
+    method:"GET",
+    url:`/products/${id}`,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem("token")}`
+    },
+  })
+     
+     .then((r) => singleProduct=r.data )
+     .catch((e) => console.log(e));
+ }
+ useEffect(()=>{
+getSingleProduct()
+ },[])
 
-  if (singleProductLoading) return <Box>Loading...</Box>;
-  else {
+const handleCart =(id)=>{
+
+  dispatch(addCartData(id)).then((res)=>dispatch(getCartData()))
+ }
+  
     return (
       <div>
         <Flex
-          direction={isLargerThan768 ? "row" : "column"}
+          // direction={isLargerThan768 ? "row" : "column"}
           position={"relative"}
           bg={"white"}
           left="0"
@@ -342,9 +329,9 @@ const SingleProd = () => {
                 size="sm"
                 borderRadius={"5px"}
                 w={"150px"}
-                onChange={(e) => {
-                  setCountValue(e.target.value);
-                }}
+                // onChange={(e) => {
+                //   setCountValue(e.target.value);
+                // }}
               >
                 <option value="1">1 Quantity</option>
                 <option value="2">2 Quantity</option>
@@ -374,7 +361,7 @@ const SingleProd = () => {
             <Flex justifyContent={"center"} alignItems={"center"}>
               <Button
                 key={singleProduct?.id}
-                onClick={() => handleAddToCart(singleProduct, countValue)}
+                onClick={() => handleCart(id)}
                 bottom={"10"}
                 position={"absolute"}
                 w={"25%"}
@@ -382,7 +369,7 @@ const SingleProd = () => {
                 color={"white"}
                 _hover={{ backgroundColor: "#fa5344" }}
                 _active={{ backgroundColor: "#fa5344" }}
-                isLoading={updateCartItem.loading || addCartItem.loading}
+          
                 loadingText="ADDING..."
               >
                 ADD TO CART
@@ -393,6 +380,5 @@ const SingleProd = () => {
       </div>
     );
   }
-};
-
+ 
 export default SingleProd;
