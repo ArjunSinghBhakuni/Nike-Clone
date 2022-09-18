@@ -18,7 +18,7 @@ const dispatch = useDispatch()
 
  
   return (
-   <Grid templateColumns='repeat(3, 1fr)' border={"1px solid red"} w="70%" margin={"auto"}>
+   <Grid templateColumns='repeat(3, 1fr)' border={"1px solid red"} w="80%" gap={"20px"} justifyContent="flex-end">
      {products?.map((el,i)=>(
  <GridItem>
  

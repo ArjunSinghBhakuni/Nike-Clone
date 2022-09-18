@@ -1,13 +1,14 @@
 import React from 'react'
-import {HStack}  from '@chakra-ui/react';
-import Slidebar, { LeftSideFilter } from '../../components/Products/LeftSideFilter';
+import {Box}  from '@chakra-ui/react';
+ 
 import ProductShow from '../../components/Products/ProductShow';
+import Sidebar from '../../components/Products/Sidebar';
 const Product = () => {
   return (
-     <HStack space={10}>
-    <LeftSideFilter/>?
+     <Box marginTop={"50px"} display={"flex"}>
+ <Sidebar/>
       <ProductShow/>  
-     </HStack>
+     </Box>
   )
 }
 

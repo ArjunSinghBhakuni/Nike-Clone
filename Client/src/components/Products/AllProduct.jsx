@@ -17,7 +17,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
  
- 
+ import "./product.css"
 
 const ToolTip = styled.i`
   font-size: 12px;
@@ -188,12 +188,14 @@ const AllProduct = ({ title,description,category,price,size,color,rating,img,_id
       p={"10px"}
     >
       <Box
-        width="200px"
+        width="100%"
+        h="100%"
         margin="auto"
-        p={"20px 20px"}
+        
         bg={"white"}
         rounded={4}
         position={"relative"}
+        className="productsImg"
       >
         <Link
           to={`/products/${_id}`}
@@ -201,10 +203,8 @@ const AllProduct = ({ title,description,category,price,size,color,rating,img,_id
         >
           <Image
             src={img[0]}
-            h="150px"
-            bg={"#f9f9f9"}
-            display="block"
-            m={"auto"}
+   
+         
           />
         </Link>
       </Box>
