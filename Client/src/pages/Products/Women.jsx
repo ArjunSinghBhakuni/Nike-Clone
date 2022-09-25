@@ -5,7 +5,7 @@ import WomenShow from '../../components/gender/WomenShow'
 const Women = () => {
   return (
     <HStack>
-     <Slide/>
+  
      <WomenShow/>
     </HStack>
   )

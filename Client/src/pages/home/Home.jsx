@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
  
 import { ClothSection } from "../../components/home/ClothSection.jsx";
 import { ShoeSection } from "../../components/home/ShoeSection.jsx";
+import Recommend from "../../components/homecomponents/Recommend.jsx";
 import Slideshow from "../../components/homecomponents/Slideshow.jsx";
 import { getClothData, getShoeData } from "../../redux/home/actions.js";
  
@@ -38,7 +39,8 @@ export const Home = () => {
         <>
           
                 <Slideshow/>
-           
+                
+                <Recommend/>
         </>
     );
 };

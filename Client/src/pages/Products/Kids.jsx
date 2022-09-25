@@ -5,7 +5,7 @@ import KidsShow from '../../components/gender/KidsShow'
 const Kids = () => {
   return (
   <HStack>
-   <Slide/>
+ 
    <KidsShow/>
 
   </HStack>

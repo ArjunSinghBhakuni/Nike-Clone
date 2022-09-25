@@ -5,7 +5,7 @@ import MenShow from '../../components/gender/MenShow'
 const Men = () => {
   return (
    <HStack space={10}>
-    <Slide/>
+  
     <MenShow/>
      
      </HStack>

@@ -6,6 +6,7 @@ import { getWomenData } from '../../redux/AppReducer/action'
 import {useDispatch, useSelector} from 'react-redux'
 import {Grid,GridItem} from "@chakra-ui/react"
 import Cards from '../Products/Cards'
+import AllProduct from '../Products/AllProduct'
 
 const WomenShow = () => {
 const dispatch = useDispatch()
@@ -19,7 +20,7 @@ const dispatch = useDispatch()
      {women?.map((el,i)=>(
  <GridItem>
 
-<Cards key={i} {...el}/> 
+<AllProduct key={i} {...el}/>
  </GridItem>
      ))}
     </Grid>

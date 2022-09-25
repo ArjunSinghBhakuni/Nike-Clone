@@ -4,13 +4,12 @@ import 'react-slideshow-image/dist/styles.css'
 import slidestyle from '../homestyles/slide.module.css'
 
 const slideImages = [
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Date-launch-post-whatsapp-banner-desktop.jpg?v=1654259038",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Indian-plum-and-peach-banner.jpg?v=1653914762",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Tarty-Sweetness-banner.jpg?v=1653914749",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Delhi-launch-banner.jpg?v=1649917692",
-  "https://cdn.shopify.com/s/files/1/0449/5225/6667/files/kiwi_bannerArtboard_1.jpg?v=1650952002"
-];
-
+  "https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/2c553fec-2638-484e-b3fc-2eec849d1a94/men-s-shoes-clothing-accessories.jpg",
+  "https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/16e314b6-f8aa-4f85-aa49-fa627d24d65f/women-s-shoes-clothing-accessories.png",
+  "https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/1ac1ef70-731b-41fe-9537-decd9f1584d7/nike-just-do-it.jpg",
+  "https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/8237cd46-4ba5-4fcf-8c3d-c857a0d8b1ba/nike-kids.jpg",
+  "https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/ac972e94-9c39-4517-9af3-1e5867382d09/nike-just-do-it.jpg"
+]
 const properties={ 
 
 

@@ -2,26 +2,26 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import homestyle from '../homestyles/home.module.css'
 
-const reccomend = () => {
+const Recommend = () => {
     // data.......//
 const recc =[
     {
-       image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-1-min_570x.png?v=1614338437" ,
+       image:"https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/2af56a34-7459-48de-82cf-60a848ff063d/nike-just-do-it.png" ,
        title:"ALL FRUITS",
        description:"Pick and choose from a wide range of delicious fruits"
     },
     {
-        image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-3-min_570x.png?v=1614338730" ,
+        image:"https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/c804f931-0c54-4be7-b286-f0e0f9fca67b/nike-just-do-it.png" ,
         title:"FRESH CUTS",
         description:"We want to spoon-feed you… quite literally"
      },
      {
-        image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-2-min_570x.jpg?v=1614339080" ,
+        image:"https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/35bd3be8-6283-4ff8-b057-12b9d54d87fe/nike-just-do-it.png" ,
         title:"FRUIT COMBOS",
         description:"Indulge in fruit combinations created by us"
      },
      {
-        image:"https://cdn.shopify.com/s/files/1/0449/5225/6667/files/2I8A6078_570x.jpg?v=1631516874" ,
+        image:"https://i.pinimg.com/564x/5d/b1/90/5db19056c14674f83ec6f58496326a5a.jpg" ,
         title:"GIFTS BY KIMAYE",
         description:"Healthy & memorable gifts for your loved ones"
      }
@@ -89,4 +89,4 @@ const recc =[
   )
 }
 
-export default reccomend
+export default Recommend
