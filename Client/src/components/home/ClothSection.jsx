@@ -17,12 +17,12 @@ export const ClothSection = ({ heading, description, img, gender, handleSection 
                 onClick={() => { handleSection(gender) }}
                 gap={['10px', '10px', '10px', '10px', '20px']}
                 templateColumns={["repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)", "repeat(4, 1fr)", "repeat(4, 1fr)"]}
-            >
-                <ClothGridBox source={img[0]} />
-                <ClothGridBox source={img[1]} />
-                <ClothGridBox source={img[2]} />
-                <ClothGridBox source={img[3]} />
-            </Grid>
+                >
+                    <ClothGridBox source={img[0]} />
+                    <ClothGridBox source={img[1]} />
+                    <ClothGridBox source={img[2]} />
+                    <ClothGridBox source={img[3]} />
+                </Grid>
         </Box>
     );
 };
