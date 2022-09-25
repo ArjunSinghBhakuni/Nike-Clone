@@ -16,18 +16,23 @@ import { NewButton } from "../../components/description/NewButton";
 import { useEffect, useState } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
-import { addCartData, getCartData } from "../../redux/AppReducer/action";
+import { addCartData, getCartData ,getProductsData} from "../../redux/AppReducer/action";
 import axios from "axios";
 
 export const Description = () => {
     const product = useSelector((state)=>state.AppReducer.products)
-    console.log("product",product)
+  
   const { id } = useParams();
   console.log("id", id);
   const dispatch = useDispatch();
   const isLoaded = useSelector((state) => state.AppReducer.notLoading);
 
   const [singleProduct]  = product.filter((e)=>e._id===id)
+  useEffect(() => {
+    if (product?.length === 0) {
+      dispatch(getProductsData());
+    }
+  }, [product?.length, dispatch]);
 //   console.log(filter)
 
 //   let [singleProduct] = filter;

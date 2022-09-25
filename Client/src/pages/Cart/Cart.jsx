@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, VStack } from '@chakra-ui/react'
+import { Box,   VStack } from '@chakra-ui/react'
 
  
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,6 +11,8 @@ import { OrderSummary } from '../../components/order/OrderSummary'
  
 import { getCartData } from '../../redux/AppReducer/action'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { CheckoutForm } from '../../components/checkout/CheckoutForm'
 
 const Cart = () => {
  
@@ -18,24 +20,30 @@ const navigate = useNavigate()
  const CartData = useSelector((state)=>state.AppReducer.cart)
  console.log("CartData",CartData)
  
- const handleClick =()=>{
-  navigate("/checkout")
- }
+ const [showDeliveryForm,setShowDeliveryForm] = useState(false)
 
   return (
     <>
-    <Flex  border={"1px solid red"}  >
-<VStack border={"1px solid red"} w="70%" >
+    <Box display="flex"  border={"1px solid red"} justifyContent="space-between" p="50px 100px" >
+ { showDeliveryForm ?
+    <Box w="500px">
 { CartData?.map((e,i)=>(
   <CartShow key={i} {...e}/>
   ))
 }
-  </VStack>
-  <VStack>
+  </Box>
+:
+<Box>
+<CheckoutForm/>
+
+</Box>  
+}
+ 
+  <Box>
 <OrderSummary   key={CartData._id} CartData={CartData}/>
-<BtnCheckout onClick={handleClick}/>
-  </VStack>
-    </Flex>
+<BtnCheckout onClick={()=>setShowDeliveryForm(!showDeliveryForm)}/>
+  </Box>
+    </Box>
   </>
   ) 
 }

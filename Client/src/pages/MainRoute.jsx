@@ -6,7 +6,8 @@ import Signup from './authentication/Signup'
 import Cart from './Cart/Cart'
 import Checkout from './checkout/Checkout'
 import { Description } from './description/Description'
-import Homepage from './HomePage/Homepage'
+import { Home } from './home/Home'
+ 
 import Navbar from './navbar/Navbar'
 import Kids from './Products/Kids'
 import Men from './Products/Men'
@@ -18,7 +19,7 @@ const MainRoute = () => {
     <>
     <Navbar/>
     <Routes>
-      <Route  path='/' element={<Homepage/>}  />
+      <Route  path='/' element={<Home/>}  />
       <Route path='/products' element={<Product/>} />
       <Route path='/products/men' element={<Men/>} />
       <Route path='/products/women' element={<Women/>} />
