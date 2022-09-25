@@ -8,7 +8,7 @@ singleProductController.get("/:id", async(req,res)=>{
 
  const params = req.params
  const product = await ProductModel.find({_id:params})
- console.log(product)
+ 
  res.send(product)
 })
 

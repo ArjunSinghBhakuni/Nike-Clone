@@ -9,6 +9,8 @@ const cors = require("cors");
 const cartController = require("./controller/cartController");
 const authentication = require("./middleware/authentication");
 const singleProductController = require("./controller/singleProductController");
+const clothDataController = require("./controller/clothDataController");
+const ShoeController = require("./controller/shoeController");
 const app = express();
 
 app.use(express.json());
@@ -19,7 +21,8 @@ app.get("/", (req, res) => {
 });
  
  
-
+app.use("/clothData",clothDataController)
+app.use("/shoeData",ShoeController)
 app.use("/user", userController);
 //  app.use(authentication)
 app.use("/products", productController);

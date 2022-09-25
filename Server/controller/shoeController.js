@@ -1,4 +1,5 @@
 const express = require("express")
+const ProductModel = require("../model/ProductModel")
 const ShoeModel = require("../model/shoeDataModel")
  
  
@@ -9,7 +10,9 @@ const ShoeController = express.Router()
 
 ShoeController.get("/", async(req,res)=>{
 
- const products = await ShoeModel.find()
+ const shoes = await ProductModel.find({category:"Shoes"})
  
- res.send(products)
+ res.send(shoes)
 })
+
+module.exports = ShoeController;
