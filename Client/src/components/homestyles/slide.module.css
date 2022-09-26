@@ -1,9 +1,11 @@
-.each>div {
+.each div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
-    height: 550px;
+    height: 600px;
+    box-sizing: border-box;
+
  
   }
   
@@ -42,7 +44,7 @@
     
 }
 .top{
-  margin-top: -30px;
+ 
   text-align: center;
 }  
  
