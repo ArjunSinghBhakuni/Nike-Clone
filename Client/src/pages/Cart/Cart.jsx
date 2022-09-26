@@ -25,23 +25,19 @@ const navigate = useNavigate()
   return (
     <>
     <Box display="flex"  border={"1px solid red"} justifyContent="space-between" p="50px 100px" >
- { showDeliveryForm ?
+ 
     <Box w="500px">
 { CartData?.map((e,i)=>(
   <CartShow key={i} {...e}/>
   ))
 }
   </Box>
-:
-<Box>
-<CheckoutForm/>
-
-</Box>  
-}
+ 
+ 
  
   <Box>
 <OrderSummary   key={CartData._id} CartData={CartData}/>
-<BtnCheckout onClick={()=>setShowDeliveryForm(!showDeliveryForm)}/>
+<BtnCheckout  />
   </Box>
     </Box>
   </>

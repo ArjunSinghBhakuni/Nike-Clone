@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 app.use("/clothData",clothDataController)
 app.use("/shoeData",ShoeController)
 app.use("/user", userController);
-//  app.use(authentication)
+ 
 app.use("/products", productController);
  
  
