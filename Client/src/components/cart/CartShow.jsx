@@ -58,16 +58,14 @@ const CartShow = ({ title, img, price, _id, count }) => {
 
     <>
       <Box
-        border={"1px solid red"}
-        my={"15px"}
+               my={"15px"}
         minH={"150px"}
         display={"flex"}
         gap={["5px", "5px", "20px", "20px", "20px"]}
       >
-        <Box display={"flex"}  gap={["5px", "5px", "20px", "20px", "20px"]}>
+        <Box display={"flex"} gap={["5px", "5px", "20px", "20px", "20px"]}>
           <Box
-            border={"1px solid red"}
-            w={["80px", "80px", "150px", "150px", "150px"]}
+                       w={["80px", "80px", "150px", "150px", "150px"]}
             h={["80px", "80px", "150px", "150px", "150px"]}
           >
             <Image h={"100%"} src={img[0]} />
@@ -77,6 +75,7 @@ const CartShow = ({ title, img, price, _id, count }) => {
             w={"100%"}
             display={"grid"}
             gap={"2%"}
+            
             gridTemplateColumns={[
               "67% 30%",
               "67% 30%",
@@ -84,7 +83,7 @@ const CartShow = ({ title, img, price, _id, count }) => {
               "80% 18%",
               "80% 18%",
             ]}
-          >
+          > 
             <Box minH={"150px"}>
               <Text fontWeight={500}>{title}</Text>
               {/* <Text color={'gray'}>{description}</Text> */}
@@ -110,8 +109,8 @@ const CartShow = ({ title, img, price, _id, count }) => {
             </Box>
           </Box>
         </Box>
-        <Box minH={"150px"}>
-          <Text fontSize={"18px"} textAlign={"end"}>
+        <Box minH={"150px"} marginLeft="420px">
+          <Text fontSize={"18px"} >
             ₹{price}
           </Text>
         </Box>

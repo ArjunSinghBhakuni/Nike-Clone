@@ -24,9 +24,9 @@ const navigate = useNavigate()
 
   return (
     <>
-    <Box display="flex"  border={"1px solid red"} justifyContent="space-between" p="50px 100px" >
+    <Box display="flex"    >
  
-    <Box w="500px">
+    <Box  w={"70%"}   >
 { CartData?.map((e,i)=>(
   <CartShow key={i} {...e}/>
   ))
@@ -35,7 +35,7 @@ const navigate = useNavigate()
  
  
  
-  <Box>
+  <Box marginLeft={"100px"}>
 <OrderSummary   key={CartData._id} CartData={CartData}/>
 <BtnCheckout  />
   </Box>

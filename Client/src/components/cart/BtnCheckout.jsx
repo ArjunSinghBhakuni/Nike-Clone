@@ -15,7 +15,7 @@ export const BtnCheckout = ( {onClick}) => {
                 mb={'20px'}
                
             >
-                 Checkout 
+              Payment
             </Button>
         </>
     );
