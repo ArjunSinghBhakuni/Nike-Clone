@@ -28,8 +28,8 @@ const CartShow = ({ title, img, price, _id, count }) => {
     }
   };
 
-  const handleRemoveItem = (id, type = "dec") => {
-    dispatch(countCartData(id, type)).then((res) => dispatch(getCartData()));
+  const handleRemoveItem = (id) => {
+    dispatch(deleteCartData(id)).then((res) => dispatch(getCartData()))
   };
 
   const handleAddToFavourite = () => {
@@ -97,13 +97,13 @@ const CartShow = ({ title, img, price, _id, count }) => {
                 <Button onClick={() => handleChange(_id, "inc")}>+</Button>
               </Flex>
 
-              <Box display={"flex"} gap={"10px"}>
-                <Text title={"Favourites"} onClick={handleAddToFavourite}>
-                  Remove
+              <Box display={"flex"} gap={"10px"} textDecoration={"underline"}>
+                <Text cursor={"pointer"} title={"Favourites"} onClick={handleAddToFavourite}>
+                 Favourite
                 </Text>
 
-                <Text title={"Remove"} onClick={() => handleRemoveItem(_id)}>
-                  Delete
+                <Text cursor={"pointer"} title={"Remove"} onClick={() => handleRemoveItem(_id)}>
+                Remove
                 </Text>
               </Box>
             </Box>

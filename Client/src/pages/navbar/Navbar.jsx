@@ -15,7 +15,18 @@ import {
   useBreakpointValue,
   useDisclosure,
   Image,
+  Avatar,
 } from '@chakra-ui/react';
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from '@chakra-ui/react'
 import {
   HamburgerIcon,
   CloseIcon,
@@ -25,14 +36,20 @@ import {
 
 import { BsBag } from "react-icons/bs";
 import {useNavigate} from "react-router-dom"
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../redux/AuthReducer/action';
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
     const navigate =  useNavigate()
-// const isAuth = useSelector((state)=>state.AuthReducer.isAuth)
-// console.log(isAuth)
-
- 
+    
+ const isAuth = useSelector((state)=>state.AuthReducer.isAuth)
+  console.log(isAuth?"ture":"false")
+ const dispatch = useDispatch()
+  const handleLogout =()=>{
+   
+    dispatch(logout())
+    navigate("/login")
+  }
   return (
     <Box    boxShadow = {"rgba(149, 157, 165, 0.2) 0px 8px 24px"}>
       <Flex border={"1px solid red"}
@@ -78,41 +95,49 @@ export default function Navbar() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          
+          { !isAuth ? 
+         
+         
           <Button
             display={{ base: 'inline-flex', md: 'inline-flex' }}
             fontSize={'m'}
             fontWeight={500}
-            color={'white'}
-            bg= "black"
+            
+            color={'black '}
+           border="none"
             href={'#'}
-            _hover={{
-              bg: 'black',
 
-            }}
-            onClick={()=>{
-              navigate("/signup")
-            }}
-            >
-            Sign Up 
-          </Button>
-          <Button
-            display={{ base: 'inline-flex', md: 'inline-flex' }}
-            fontSize={'m'}
-            fontWeight={500}
-            color={'white'}
-            bg= "black"
-            href={'#'}
+            variant={"outline"}
             _hover={{
               bg: 'black',
+              color:"white"
 
             }}
             onClick={()=>{
               navigate("/login")
             }}
             >
-          Login 
+          Sign in
           </Button>
+           :
+      
+          <Menu>
+  <MenuButton   >
+  <Avatar as={Button} size='md' name='Arjun' src='https://bit.ly/broken-link' />
+  </MenuButton>
+ 
+  <MenuList>
+    <MenuGroup title='Profile'>
+      <MenuItem>My Orders</MenuItem>
+      <MenuItem>Wishlist</MenuItem>
+      <MenuItem>Cart</MenuItem>
+      <MenuItem onClick={handleLogout}>Logout</MenuItem>
+    </MenuGroup>
+    
+  </MenuList> 
+</Menu>
+    }
+
           <Box fontSize={"35px"}  onClick={()=>{
             navigate("/cart")
           }}>

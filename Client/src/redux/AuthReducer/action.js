@@ -27,3 +27,8 @@ export const loginUser = (temp) => (dispatch) => {
     })
     .catch((e) => dispatch({ type: types.LOGIN_FAILURE }));
 };
+
+export const logout =()=> (dispatch) =>{
+  localStorage.removeItem("token");
+  dispatch({type:types.LOGOUT_SUCCESS,payload:""})
+}
