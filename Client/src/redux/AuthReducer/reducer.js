@@ -1,7 +1,7 @@
 import * as types from "./actiontype";
 
 const intialState = {
-  isAuth: false,
+  isAuth: localStorage.getItem("token") ?  true :false,
   token: localStorage.getItem("token") || "",
   isLoading: false,
   isError: false,

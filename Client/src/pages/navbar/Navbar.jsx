@@ -45,6 +45,8 @@ export default function Navbar() {
  const isAuth = useSelector((state)=>state.AuthReducer.isAuth)
   console.log(isAuth?"ture":"false")
  const dispatch = useDispatch()
+
+ 
   const handleLogout =()=>{
    
     dispatch(logout())
