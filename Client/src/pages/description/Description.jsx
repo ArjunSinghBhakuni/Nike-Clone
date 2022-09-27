@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   Grid,
   ListItem,
@@ -15,54 +16,58 @@ import { NewButton } from "../../components/description/NewButton";
 
 import { useEffect, useState } from "react";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { addCartData, getCartData ,getProductsData} from "../../redux/AppReducer/action";
 import axios from "axios";
 
 export const Description = () => {
-    const product = useSelector((state)=>state.AppReducer.products)
+
+//   const dispatch = useDispatch();
+  const product = useSelector((state)=>state.AppReducer.products)
+//   const [singleProduct, setSingleProduct] = useState({});
+ 
+//   const { id } = useParams();
+//   console.log("id",id)
+//   const location = useLocation();
+//  // console.log(location);
+//   useEffect(() => {
+//     if (product?.length === 0) {
+//       dispatch(getProductsData());;
+//     }
+//   }, []);
+
+//   useEffect(() => {
+//     if (id) {
+//       const temp = product?.find((el) => el._id == (id));
+//       console.log("temp",temp)
+//       temp && setSingleProduct(temp);
+//     }
+//   }, [product, id, location]);
+
+  
   
   const { id } = useParams();
-  console.log("id", id);
+ 
   const dispatch = useDispatch();
   const isLoaded = useSelector((state) => state.AppReducer.notLoading);
 
-  const [singleProduct]  = product.filter((e)=>e._id===id)
+
   useEffect(() => {
-    if (product?.length === 0) {
+    
       dispatch(getProductsData());
-    }
-  }, [product?.length, dispatch]);
-//   console.log(filter)
+  
+  }, []);
 
-//   let [singleProduct] = filter;
-//   const getSingleProduct = () => {
-//     axios({
-//       method: "GET",
-//       url: `/products/${id}`,
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${localStorage.getItem("token")}`,
-//       },
-//     })
-//       .then((r) =>{
-// console.log(r.data)
-//           singleProduct = r.data
-//           console.log(singleProduct)
-//       })
-//       .catch((e) => console.log(e));
-//   };
-
-//   useEffect(() => {
-//     getSingleProduct();
-//   }, []);
+ 
+  const [singleProduct]  = product?.filter((e)=>e._id===id)
+ 
 
   const handleCart = (id) => {
+   
     dispatch(addCartData(id)).then((res) => dispatch(getCartData()));
   };
 
-  console.log("single", singleProduct);
-
+ 
   const handleAddToFavourite = () => {
     // if (!token) {
     //     setToast(toast, 'Please login first', 'error');
@@ -103,22 +108,45 @@ export const Description = () => {
             <SelectSize size={singleProduct?.size} />
           </Box>
 
-          <NewButton
-            onClick={() => handleCart(id)}
-            name={"Add to Bag"}
+          <Button 
+           h={"62px"}
+         
+           border={`1px solidtransparent`}
+           borderRadius={"50px"}
+           w={"100%"}
+           fontSize={"17px"}
+           my={"10px"}
+           _hover={{ bg: "#1e1e1e", borderColor: "white" }}
             bgColor={"black"}
             color={"white"}
             hoverBg={"#1e1e1e"}
             borderColor={"transparent"}
-          />
-          <NewButton
-            click={handleAddToFavourite}
-            name={"Favourite"}
-            bgColor={"white"}
-            color={"black"}
-            hoverBorder={"black"}
-            borderColor={"#cecdce"}
-          />
+        onClick={() => handleCart(singleProduct?._id)}>
+          Add to Bag
+          </Button>
+          <Button 
+           bgColor={"white"}
+           color={"black"}
+           hoverBorder={"black"}
+           borderColor={"#cecdce"}
+           h={"62px"}
+         
+           border={`1px solid black`}
+           borderRadius={"50px"}
+           w={"100%"}
+           fontSize={"17px"}
+           my={"10px"}
+           _hover={{ bg: "#white", borderColor: "white" }}
+         
+      
+         
+       
+        onClick={handleAddToFavourite}>
+       Faviourite
+          </Button>
+            
+       
+        
 
           <Divider my={"30px"} />
 

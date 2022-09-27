@@ -59,6 +59,7 @@ const SingleProd = () => {
      .then((r) => singleProduct=r.data )
      .catch((e) => console.log(e));
  }
+
  useEffect(()=>{
 getSingleProduct()
  },[])
