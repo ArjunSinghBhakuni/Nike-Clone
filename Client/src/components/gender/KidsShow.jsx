@@ -16,7 +16,7 @@ const dispatch = useDispatch()
  }, [])
  
   return (
-   <Grid templateColumns='repeat(3, 1fr)'>
+   <Grid templateColumns='repeat(4, 1fr)'  gap={"20px"} justifyContent="flex-end">
      {kids?.map((el,i)=>(
  <GridItem>
 

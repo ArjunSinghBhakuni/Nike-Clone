@@ -8,6 +8,9 @@ export const OrderSummary  = ( { CartData }) => {
  let Quantity = CartData.reduce((a,ac)=>a+ac.count,0)
  console.log(Quantity) 
  
+ let discount = Math.floor(totalPrice*20/100)
+ let gst = Math.floor(((totalPrice-discount)*18)/100)
+ let total = totalPrice - discount + gst
  return (
         <>
 
@@ -32,27 +35,28 @@ export const OrderSummary  = ( { CartData }) => {
                       shipping  ₹{numberWithCommas(shipping)}.00
                     </Text>
                 </Flex> */}
-                
+                 <Flex mt={'5px'} justifyContent={'space-between'}>
+                    <Text>Discount (20% off)</Text>
+                    <Text>-₹ {discount}.00</Text>
+                </Flex>
+         
                 <Flex mt={'5px'} justifyContent={'space-between'}>
+
                     <Text >Taxes</Text>
                     <Text
                         title={'Free delivery applies to orders of ₹14,000 or more'}
                         cursor={'pointer'}
                     >
-                     ₹ -100.00  {/* ₹{numberWithCommas(shipping)}.00 */}
+                     ₹ {gst}.00  {/* ₹{numberWithCommas(shipping)}.00 */}
                     </Text>
                 </Flex>
-                <Flex mt={'5px'} justifyContent={'space-between'}>
-                    <Text>Discount</Text>
-                    <Text>₹ 100.00</Text>
-                </Flex>
-         
+               
 
             <Divider />
 
             <Flex fontSize={'18px'} justifyContent={'space-between'} my={'20px'}>
                 <Text>Total</Text>
-                <Text fontWeight={500} >₹  500.00</Text>
+                <Text fontWeight={500} >₹  {total}.00</Text>
             </Flex>
 
  

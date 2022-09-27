@@ -13,17 +13,31 @@ import { getCartData } from '../../redux/AppReducer/action'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { CheckoutForm } from '../../components/checkout/CheckoutForm'
+import { useEffect } from 'react'
 
 const Cart = () => {
  
 const navigate = useNavigate()
+const [dataAvail,setDataAvail] = useState(false)
  const CartData = useSelector((state)=>state.AppReducer.cart)
  console.log("CartData",CartData)
+
+ const dispatch = useDispatch()
  
+ useEffect(()=>{
+  CartData.length>0 ? setDataAvail(true): setDataAvail(false)
+
+ },[CartData,dataAvail])
+ 
+ useEffect(()=>{
+  dispatch(getCartData())
+ },[])
  const [showDeliveryForm,setShowDeliveryForm] = useState(false)
 
   return (
     <>
+    {dataAvail ?
+   
     <Box display="flex"    >
  
     <Box  w={"70%"}   >
@@ -40,6 +54,9 @@ const navigate = useNavigate()
 <BtnCheckout  />
   </Box>
     </Box>
+  : <Box>
+    Please buy something
+  </Box>   }
   </>
   ) 
 }

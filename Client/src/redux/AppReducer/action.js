@@ -92,7 +92,7 @@ export const getProductsData = ()=>(dispatch)=>{
  }
 
  export const addCartData = (id)=>(dispatch)=>{
-console.log("id",id)
+ 
   dispatch({ type: types.CART_DATA_LOADING });
   return axios ({
     method:"POST",

@@ -63,7 +63,9 @@ export default function Navbar() {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
           
            >
-          <Image h="50px" w="70px" src='https://i.postimg.cc/sDJwyWW1/adds.png'/>
+            
+          <Image onClick={()=>navigate("/")} h="50px" w="70px" src='https://mohit-nikeclone.netlify.app/assets/Nike-logo.868b342b.png'/>
+           
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex',lg:"flex" }}   ml={{ base: 'none', md: '20%',lg:"30%" }}  >
