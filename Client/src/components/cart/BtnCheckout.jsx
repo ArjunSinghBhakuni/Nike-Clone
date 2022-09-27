@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 
-
-export const BtnCheckout = ( {onClick}) => {
+export const BtnCheckout = ({onClick}) => {
+ 
     return (
         <>
              <Button
@@ -15,7 +15,7 @@ export const BtnCheckout = ( {onClick}) => {
                 mb={'20px'}
                
             >
-              Payment
+             Checkout Delivery
             </Button>
         </>
     );

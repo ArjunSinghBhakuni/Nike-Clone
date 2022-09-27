@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box,   VStack } from '@chakra-ui/react'
+import { Box,   VStack,Image,Text,Button,Container,Heading } from '@chakra-ui/react'
 
  
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,6 +21,10 @@ const navigate = useNavigate()
 const [dataAvail,setDataAvail] = useState(false)
  const CartData = useSelector((state)=>state.AppReducer.cart)
  console.log("CartData",CartData)
+ const handleClick =()=>{
+  console.log("yes")
+  navigate("/checkout")
+ }
 
  const dispatch = useDispatch()
  
@@ -34,6 +38,7 @@ const [dataAvail,setDataAvail] = useState(false)
  },[])
  const [showDeliveryForm,setShowDeliveryForm] = useState(false)
 
+ 
   return (
     <>
     {dataAvail ?
@@ -51,12 +56,30 @@ const [dataAvail,setDataAvail] = useState(false)
  
   <Box marginLeft={"100px"}>
 <OrderSummary   key={CartData._id} CartData={CartData}/>
-<BtnCheckout  />
+<BtnCheckout onClick={handleClick}  />
   </Box>
     </Box>
-  : <Box>
-    Please buy something
-  </Box>   }
+  :  
+     <Container width={"100%"} pb={"200px"}>
+        <Box textAlign="center" mt={"50px"}>
+          <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3zGfbc45UO1GBzJRX4OiYHAx4ChsDRDlTyg&usqp=CAU"} m={"auto"} height={"150px"} />
+          <Heading fontSize={"22px"} mt="10px">
+            Oops!
+          </Heading>
+          <Text mt="10px">Looks like there is no item in your cart yet.</Text>
+          <Button
+            mt="10px"
+            background={"grey"}
+            color={"white"}
+            _hover={{ backgroundColor: "black" }}
+            _active={{ backgroundColor: "black" }}
+            onClick={() => navigate("/products")}
+          >
+            ADD PRODUCTS
+          </Button>
+        </Box>
+      </Container>
+    }
   </>
   ) 
 }
