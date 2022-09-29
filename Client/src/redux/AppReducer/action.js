@@ -111,7 +111,7 @@ export const getProductsData = ()=>(dispatch)=>{
  }
 
  export const countCartData = (id,type)=>(dispatch)=>{
-  console.log("id",id)
+  // console.log("id",id)
     dispatch({ type: types.CART_DATA_LOADING });
     return axios
     ({
@@ -132,7 +132,7 @@ export const getProductsData = ()=>(dispatch)=>{
    }
 
    export const deleteCartData = (id)=>(dispatch)=>{
-    console.log("id",id)
+    // console.log("id",id)
       dispatch({ type: types.CART_DATA_LOADING });
       return axios
       ({

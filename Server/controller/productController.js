@@ -18,9 +18,9 @@ productController.get("/men", async(req,res)=>{
  res.send(products)
 })
 productController.get("/women", async(req,res)=>{
-console.log("req.url",req.url)
+// console.log("req.url",req.url)
  const products = await ProductModel.find({gender:"Women"})
- console.log(products)
+ // console.log(products)
  res.send(products)
 })
 productController.get("/kids", async(req,res)=>{
@@ -34,7 +34,7 @@ productController.get("/:id", async(req,res)=>{
  const {id} = req.params
  
  const product = await ProductModel.findOne({_id:id})
- console.log("product",product)
+ // console.log("product",product)
  res.send(product)
 })
 productController.post("/",(req,res)=>{

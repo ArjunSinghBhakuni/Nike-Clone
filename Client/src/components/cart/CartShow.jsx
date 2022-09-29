@@ -23,7 +23,7 @@ const CartShow = ({ title, img, price, _id, count }) => {
   const dispatch = useDispatch();
   const handleChange = (id, type) => {
     if (count === 1 && type === "dec") {
-      console.log("count is", count);
+      // console.log("count is", count);
       dispatch(deleteCartData(id)).then((res) => dispatch(getCartData()));
     } else {
       dispatch(countCartData(id, type)).then((res) => dispatch(getCartData()));

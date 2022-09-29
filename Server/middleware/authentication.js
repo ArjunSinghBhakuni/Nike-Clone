@@ -10,7 +10,7 @@ const authentication = (req, res, next) => {
         if(err){
             return res.send("Please login again")
         }
-        console.log(decoded)
+        // console.log(decoded)
         req.body.email = decoded.email
         req.body.userId = decoded.userId
         next()

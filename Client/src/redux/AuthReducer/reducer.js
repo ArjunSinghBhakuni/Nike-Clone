@@ -33,7 +33,7 @@ const reducer = (state = intialState, { type, payload }) => {
     }
 
     case types.LOGIN_LOADING: {
-      console.log("loading")
+      // console.log("loading")
       return {
         ...state,
         isLoading: true,
@@ -41,7 +41,7 @@ const reducer = (state = intialState, { type, payload }) => {
       };
     }
     case types.LOGIN_SUCCESS: {
-      console.log("payload", payload)
+      // console.log("payload", payload)
       return {
         ...state,
         isLoading: false,

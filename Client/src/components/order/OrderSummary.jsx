@@ -4,9 +4,9 @@ import { Box, Button, Divider, Flex, Text } from "@chakra-ui/react";
 
 export const OrderSummary  = ( { CartData }) => {
  let totalPrice = CartData.reduce((a,ac)=>a+ac.price,0)
- console.log(totalPrice)
+//  console.log(totalPrice)
  let Quantity = CartData.reduce((a,ac)=>a+ac.count,0)
- console.log(Quantity) 
+//  console.log(Quantity) 
  
  let discount = Math.floor(totalPrice*20/100)
  let gst = Math.floor(((totalPrice-discount)*18)/100)

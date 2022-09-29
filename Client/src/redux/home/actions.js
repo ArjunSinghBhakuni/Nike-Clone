@@ -16,7 +16,7 @@ export const getClothData = () => async (dispatch) => {
         let res = await axios.get("/clothData");
         dispatch(getDataSuccessCloth(res.data));
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         dispatch(getDataErrorHome());
     }
 };
