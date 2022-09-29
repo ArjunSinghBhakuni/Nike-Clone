@@ -33,14 +33,14 @@ const recc =[
         <h1>New Outfit</h1>
        <h3>Available Items for Men Woemn Kids</h3>
         <br/>
-    <div className={homestyle.box1} style={{"border":"1px solid black"}}  >
+    <div className={homestyle.box1}  >
 
    {
     recc.map((el)=>(
-       <div style={{"border":"1px solid red"}} className={homestyle.box2}>
-        <div style={{"border":"1px solid blue"}}  className={slidestyle.each} >
+       <div   className={homestyle.box2}>
+        <div    className={slidestyle.each} >
         {/* <img src={el.image}/> */}
-        <div   className={homestyle.child} style={{'backgroundImage': `url(${el.image})`,"border":"1px solid teal"}} >
+        <div   className={homestyle.child} style={{'backgroundImage': `url(${el.image})`}} >
 
         <Link   to={`/products/${el.title}`}>
         <button style={{"backgroundColor":"white","borderRadius":"20px" ,"padding":"10px","marginTop":"300px" }}> Shop Now</button>
