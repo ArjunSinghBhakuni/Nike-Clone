@@ -22,10 +22,19 @@ const Cart = () => {
 const navigate = useNavigate()
 const [dataAvail,setDataAvail] = useState(true)
  const CartData = useSelector((state)=>state.AppReducer.cart)
+ const isAuth = useSelector((state)=>state.AuthReducer.isAuth)
  const toast = useToast()
  const handleClick =()=>{
-  setToast(toast, "Checkout", "info");
-  navigate("/checkout")
+  
+  if(isAuth){
+
+    setToast(toast, "Checkout", "info");
+    navigate("/checkout")
+    
+  } else {
+    setToast(toast, "Please Login first", "error");
+    navigate("/checkout")
+  }
  }
 
  const dispatch = useDispatch()

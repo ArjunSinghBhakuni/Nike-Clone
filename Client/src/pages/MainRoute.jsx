@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import PrivateRoute from '../components/Route/PrivateRoute'
  
 import Login from './authentication/Login'
 import Signup from './authentication/Signup'
@@ -24,11 +25,16 @@ const MainRoute = () => {
       <Route path='/products/men' element={<Men/>} />
       <Route path='/products/women' element={<Women/>} />
       <Route path='/products/kids' element={<Kids/>} />
-      <Route path='/products/:id' element={<Description/>} />
-      <Route path='/cart' element={<Cart/>} />
       <Route path='/signup' element={<Signup/>} />
       <Route path='/login' element={<Login/>} />
-      <Route path='/checkout' element={<Checkout/>} />
+      <Route path='/products/:id' element={<Description/>} />
+      <Route path='/cart' element={<Cart/>} />
+      <Route path='/checkout' element={
+      <PrivateRoute>
+
+        <Checkout/>
+      </PrivateRoute>
+      } />
       
     </Routes>
     </>

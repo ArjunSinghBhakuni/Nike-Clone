@@ -16,6 +16,7 @@ import {
   useDisclosure,
   Image,
   Avatar,
+  useToast,
 } from '@chakra-ui/react';
 import {
   Menu,
@@ -38,6 +39,7 @@ import { BsBag } from "react-icons/bs";
 import {useNavigate} from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/AuthReducer/action';
+import { setToast } from '../../utilties/toastfun';
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
     const navigate =  useNavigate()
@@ -45,8 +47,11 @@ export default function Navbar() {
  const isAuth = useSelector((state)=>state.AuthReducer.isAuth)
   console.log(isAuth?"ture":"false")
  const dispatch = useDispatch()
+const toast = useToast()
+ const handleoff=()=>{
+  setToast(toast, "Availble Soon", "warning");
+ }
 
- 
   const handleLogout =()=>{
    
     dispatch(logout())
@@ -125,25 +130,28 @@ export default function Navbar() {
       
           <Menu>
   <MenuButton   >
-  <Avatar as={Button} size='md' name='Arjun' src='https://bit.ly/broken-link' />
+ 
+  <Avatar  as={Button} size='md' src='https://bit.ly/broken-link' />
   </MenuButton>
  
   <MenuList>
     <MenuGroup title='Profile'>
-      <MenuItem>My Orders</MenuItem>
-      <MenuItem>Wishlist</MenuItem>
-      <MenuItem>Cart</MenuItem>
-      <MenuItem onClick={handleLogout}>Logout</MenuItem>
+    <MenuItem onClick={handleLogout}>Logout</MenuItem>
+    <MenuItem onClick={()=>navigate('/cart')}>Cart</MenuItem>
+      <MenuItem onClick={handleoff}>My Orders</MenuItem>
+      <MenuItem onClick={handleoff}>Wishlist</MenuItem>
+   
+     
     </MenuGroup>
     
   </MenuList> 
 </Menu>
     }
 
-          <Box fontSize={"35px"}  onClick={()=>{
+          <Box fontSize={"40px"}   paddingTop="1px" onClick={()=>{
             navigate("/cart")
           }}>
-          <BsBag />
+          <  BsBag  />
             </Box>
         </Stack>
       </Flex>
