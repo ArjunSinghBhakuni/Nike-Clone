@@ -23,7 +23,7 @@
 }
  
 .box2>div>img{
-    width:500px;
+    width:auto;
     transition: 0.5s all ease-in-out;
    
   
@@ -201,3 +201,113 @@
 .maindiv{
 text-align: center;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media  screen and (max-width: 600px) {.box1{
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    height: auto;
+    width: 30%;
+    margin: auto;
+    gap:40px;
+    margin-bottom: 20px;
+}
+.box2>div{
+   
+    width: 250px;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media  screen and (min-width: 600px) {
+    
+    .box1{
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    height: auto;
+    width: 40%;
+    margin: auto;
+    gap:40px;
+    margin-bottom: 20px;
+}
+.box2>div{
+   
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media  screen and (min-width: 768px) { 
+    .box1{
+        /* border: 1px solid green; */
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        height: auto;
+        width: 60%;
+        margin: auto;
+        gap:40px;
+        margin-bottom: 20px;
+    }
+    .box2>div{
+   
+        width: 400px;
+        margin: auto;
+        margin-top: 20px;
+        display: block;
+        overflow: hidden;
+        border-radius: 20px;
+    
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media  screen and (min-width: 992px) {
+
+    .box1{
+        /* border: 1px solid green; */
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        height: auto;
+        width: 80%;
+        margin: auto;
+        gap:40px;
+        margin-bottom: 20px;
+    }
+    .box2>div{
+   
+        width: 480px;
+        margin: auto;
+        margin-top: 20px;
+        display: block;
+        overflow: hidden;
+        border-radius: 20px;
+    
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media  screen and (min-width: 1200px) {.box1{
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: auto;
+    width: 80%;
+    margin: auto;
+    gap:40px;
+    margin-bottom: 20px;
+}}
