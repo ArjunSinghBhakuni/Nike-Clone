@@ -9,7 +9,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { store } from './redux/store';
 import axios from "axios"
 
- axios.defaults.baseURL = "http://localhost:8080";
+ axios.defaults.baseURL = "https://guarded-everglades-89839.herokuapp.com";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

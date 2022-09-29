@@ -40,13 +40,20 @@ const [dataAvail,setDataAvail] = useState(true)
  const dispatch = useDispatch()
  
  useEffect(()=>{
-  CartData.length !=0 ? setDataAvail(true): setDataAvail(false)
-
- },[CartData,dataAvail])
- 
- useEffect(()=>{
   dispatch(getCartData())
  },[])
+
+ 
+ useEffect(()=>{
+  if(CartData.length){
+  
+    setDataAvail(true) 
+  } else {
+    setDataAvail(false) 
+  }
+ },[CartData],setDataAvail)
+ 
+ 
  const [showDeliveryForm,setShowDeliveryForm] = useState(false)
 
  const loading = useSelector((state)=>state.AppReducer.notLoading)
@@ -57,7 +64,7 @@ const [dataAvail,setDataAvail] = useState(true)
     <>
     {dataAvail ?
    
-    <Box display="flex"    >
+    <Box display={"flex"}    >
  
     <Box  w={"70%"}   >
 { CartData?.map((e,i)=>(
@@ -69,7 +76,7 @@ const [dataAvail,setDataAvail] = useState(true)
  
  
   <Box marginLeft={"100px"}>
-<OrderSummary   key={CartData._id} CartData={CartData}/>
+<OrderSummary   key={CartData?._id} CartData={CartData}/>
 <BtnCheckout onClick={handleClick}  />
   </Box>
     </Box>

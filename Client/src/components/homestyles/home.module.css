@@ -208,14 +208,14 @@ text-align: center;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     height: auto;
-    width: 30%;
+    width: 80%;
     margin: auto;
     gap:40px;
     margin-bottom: 20px;
 }
 .box2>div{
    
-    width: 250px;
+    width: auto;
     margin: auto;
     margin-top: 20px;
     display: block;
@@ -233,14 +233,14 @@ text-align: center;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     height: auto;
-    width: 40%;
+    width: 80%;
     margin: auto;
     gap:40px;
     margin-bottom: 20px;
 }
 .box2>div{
    
-    width: 300px;
+    width: auto;
     margin: auto;
     margin-top: 20px;
     display: block;
@@ -255,16 +255,16 @@ text-align: center;
     .box1{
         /* border: 1px solid green; */
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(1,1fr);
         height: auto;
-        width: 60%;
+        width: 80%;
         margin: auto;
         gap:40px;
         margin-bottom: 20px;
     }
     .box2>div{
    
-        width: 400px;
+        width: auto;
         margin: auto;
         margin-top: 20px;
         display: block;
@@ -287,9 +287,10 @@ text-align: center;
         gap:40px;
         margin-bottom: 20px;
     }
+
     .box2>div{
    
-        width: 480px;
+        width: auto;
         margin: auto;
         margin-top: 20px;
         display: block;
