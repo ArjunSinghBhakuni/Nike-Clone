@@ -30,12 +30,6 @@
 </p>
 
 
-<h4 align="center">Payment Gateway:</h4>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Razorpay-02042B?style=for-the-badge&logo=razorpay&logoColor=3395FF" alt="razorpay" />
-</p>
-
 
 <h4 align="center">Deployed On:</h4>
 
@@ -51,13 +45,9 @@
 
 Nike Clone is MERN Stack e-commerce web application that allows you to buy shoes & clothes online. It has a variety of categories, just visit the product listing page and you will see all the products, in just a few clicks you can buy any products from the website. This project is just for educational purpose.
 
-
-
-![cover](https://user-images.githubusercontent.com/91532881/175955112-da88c18c-ac5e-455a-9ac5-047c7db4f894.png)
-
 <br />
 
-## Screens ( All screens are responsive along with Dark Mode)
+## Screens 
 - Homepage / Landing Page
 - Product Listing Page 
 - Product Description Page
