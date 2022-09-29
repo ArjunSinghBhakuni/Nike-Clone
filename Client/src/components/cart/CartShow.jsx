@@ -8,6 +8,7 @@ import {
   Image,
   Stack,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch } from "react-redux";
@@ -16,6 +17,7 @@ import {
   deleteCartData,
   getCartData,
 } from "../../redux/AppReducer/action";
+import { setToast } from "../../utilties/toastfun";
 
 const CartShow = ({ title, img, price, _id, count }) => {
   const dispatch = useDispatch();
@@ -27,12 +29,14 @@ const CartShow = ({ title, img, price, _id, count }) => {
       dispatch(countCartData(id, type)).then((res) => dispatch(getCartData()));
     }
   };
-
+const toast = useToast()
   const handleRemoveItem = (id) => {
+    setToast(toast, "Removed Succesfully", "info");
     dispatch(deleteCartData(id)).then((res) => dispatch(getCartData()))
   };
 
   const handleAddToFavourite = () => {
+    setToast(toast, "Availble Soon", "warning");
     // if (!token) {
     //     setToast(toast, 'Please login first', 'error');
     //     navigate('/auth');

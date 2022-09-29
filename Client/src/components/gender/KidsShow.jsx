@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {Grid,GridItem} from "@chakra-ui/react"
 import Cards from '../Products/Cards'
 import AllProduct from '../Products/AllProduct'
+import { Loading } from '../loading/Loading'
 
 const KidsShow = () => {
 const dispatch = useDispatch()
@@ -15,6 +16,10 @@ const dispatch = useDispatch()
    dispatch(getKidsData())
  }, [])
  
+ const loading = useSelector((state)=>state.AppReducer.notLoading)
+ if(loading === false){
+  return <Loading/>
+ }
   return (
    <Grid templateColumns='repeat(4, 1fr)'  gap={"20px"} justifyContent="flex-end">
      {kids?.map((el,i)=>(

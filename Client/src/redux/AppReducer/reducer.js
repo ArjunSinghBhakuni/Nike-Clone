@@ -113,7 +113,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.CART_DATA_LOADING: {
    return{
     ...state,
-    notLoading:false,
+   
     isError:false
    }
   }
@@ -121,21 +121,21 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     cart:payload,
-    notLoading:true,
+ 
     isError:false
    }
   }
   case types.CART_DATA_FAILURE: {
    return{
     ...state,
-    notLoading:true,
+ 
     isError:true
    }
   }
   case types.ADD_TO_CART_LOADING: {
    return{
     ...state,
-    notLoading:false,
+ 
     isError:false
    }
   }
@@ -144,14 +144,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     cart:carts,
-    notLoading:true,
+ 
     isError:false
    }
   }
   case types.ADD_TO_CART_FAILURE: {
    return{
     ...state,
-    notLoading:true,
+  
     isError:true
    }
   }
@@ -159,7 +159,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.COUNT_CART_LOADING: {
    return{
     ...state,
-    notLoading:false,
+ 
     isError:false
    }
   }
@@ -168,14 +168,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     cart:payload,
-    notLoading:true,
+ 
     isError:false
    }
   }
   case types.COUNT_CART_FAILURE: {
    return{
     ...state,
-    notLoading:true,
+ 
     isError:true
    }
   }
@@ -183,7 +183,7 @@ const reducer =(state = intialState,{type,payload})=>{
   case types.DELETE_CART_LOADING: {
    return{
     ...state,
-    notLoading:false,
+ 
     isError:false
    }
   }
@@ -192,14 +192,14 @@ const reducer =(state = intialState,{type,payload})=>{
    return{
     ...state,
     cart:payload,
-    notLoading:true,
+  
     isError:false
    }
   }
   case types.DELETE_CART_FAILURE: {
    return{
     ...state,
-    notLoading:true,
+   
     isError:true
    }
   }

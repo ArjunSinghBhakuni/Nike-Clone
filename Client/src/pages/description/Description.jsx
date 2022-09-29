@@ -5,6 +5,7 @@ import {
   Grid,
   ListItem,
   Text,
+  Toast,
   UnorderedList,
   useToast,
 } from "@chakra-ui/react";
@@ -19,9 +20,10 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { addCartData, getCartData ,getProductsData} from "../../redux/AppReducer/action";
 import axios from "axios";
+import { setToast } from "../../utilties/toastfun";
 
 export const Description = () => {
-
+  const [mySize, setMySize] = useState(false);
 //   const dispatch = useDispatch();
   const product = useSelector((state)=>state.AppReducer.products)
 //   const [singleProduct, setSingleProduct] = useState({});
@@ -61,14 +63,22 @@ export const Description = () => {
  
   const [singleProduct]  = product?.filter((e)=>e._id===id)
  
-
+const toast = useToast()
   const handleCart = (id) => {
-   
+    if (mySize === false) {
+      setToast(toast, "Please select a Size", "error");
+  } else{
+    setToast(toast, "Product Add to cart", "success");
     dispatch(addCartData(id)).then((res) => dispatch(getCartData()));
+
+  }
+   
   };
 
  
   const handleAddToFavourite = () => {
+    setToast(toast, "Availble Soon", "warning");
+    
     // if (!token) {
     //     setToast(toast, 'Please login first', 'error');
     //     navigate('/auth');
@@ -105,7 +115,7 @@ export const Description = () => {
             Select Size
           </Text>
           <Box mb={"30px"}>
-            <SelectSize size={singleProduct?.size} />
+            <SelectSize size={singleProduct?.size}    setMySize={setMySize} />
           </Box>
 
           <Button 

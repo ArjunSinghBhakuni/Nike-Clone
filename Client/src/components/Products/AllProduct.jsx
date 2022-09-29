@@ -11,6 +11,7 @@ import {
   Icon,
   Text,
   Tooltip,
+  useToast,
 } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import { BiRupee } from "react-icons/bi";
@@ -22,6 +23,7 @@ import { useParams } from "react-router-dom";
  import "./product.css"
 import { addCartData, getCartData } from "../../redux/AppReducer/action";
 import { FiShoppingCart } from 'react-icons/fi';
+import { setToast } from "../../utilties/toastfun";
 const ToolTip = styled.i`
   font-size: 12px;
   cursor: pointer;
@@ -98,11 +100,14 @@ const CardCount = styled.div`
 //   brand: ,
 // };
 
+
+
 const AllProduct = ({ title,description,category,price,size,color,rating,img,_id }) => {
   const dispatch = useDispatch()
   const isLoaded = useSelector((state)=>state.AppReducer.notLoading)
-
+const toast = useToast()
  const handleCart =(id)=>{
+  setToast(toast, 'Product Added to cart', 'success');
 
   dispatch(addCartData(id)).then((res)=>dispatch(getCartData()))
  }

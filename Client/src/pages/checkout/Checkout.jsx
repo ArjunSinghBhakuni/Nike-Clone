@@ -1,5 +1,5 @@
-import { Flex, VStack, Box ,Button, useDisclosure} from "@chakra-ui/react";
-import React from "react";
+import { Flex, VStack, Box ,Button, useDisclosure, useToast} from "@chakra-ui/react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { CheckoutForm } from "../../components/checkout/CheckoutForm";
 import { PlaceOrderBtn } from "../../components/checkout/PlaceOrder";
@@ -20,6 +20,9 @@ import {
   AlertDescription,
 } from '@chakra-ui/react'
 import Payment from "../../components/Payment/Payment";
+import { setToast } from "../../utilties/toastfun";
+import { useNavigate } from "react-router-dom";
+import { Loading } from "../../components/loading/Loading";
 
 
  
@@ -29,6 +32,26 @@ const Checkout = () => {
   const CartData = useSelector((state) => state.AppReducer.cart);
   console.log("CartData", CartData);
   const { isOpen, onOpen, onClose } = useDisclosure()
+const navigate = useNavigate()
+const toast = useToast()
+const [load,setLoad]= useState(false)
+  const handlePayment =()=>{
+
+    
+    setToast(toast, "Payment Done ", "success")
+    setLoad(true)
+    setTimeout(()=>{
+      setLoad(false)
+      
+      navigate("/")
+    },2000)
+ 
+  }
+    
+if(load){
+  return <Loading/>
+}
+  
   return (
     <>
       <Box display="flex">
@@ -50,8 +73,8 @@ const Checkout = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button   colorScheme='blue' mr={3}>
-              Save
+            <Button onClick={handlePayment}   colorScheme='blue' mr={3}>
+          Payment
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>

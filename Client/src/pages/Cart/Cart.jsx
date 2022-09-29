@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box,   VStack,Image,Text,Button,Container,Heading } from '@chakra-ui/react'
+import { Box,   VStack,Image,Text,Button,Container,Heading, useToast } from '@chakra-ui/react'
 
  
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,22 +14,24 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { CheckoutForm } from '../../components/checkout/CheckoutForm'
 import { useEffect } from 'react'
+import { Loading } from '../../components/loading/Loading'
+import { setToast } from '../../utilties/toastfun'
 
 const Cart = () => {
  
 const navigate = useNavigate()
-const [dataAvail,setDataAvail] = useState(false)
+const [dataAvail,setDataAvail] = useState(true)
  const CartData = useSelector((state)=>state.AppReducer.cart)
- console.log("CartData",CartData)
+ const toast = useToast()
  const handleClick =()=>{
-  console.log("yes")
+  setToast(toast, "Checkout", "info");
   navigate("/checkout")
  }
 
  const dispatch = useDispatch()
  
  useEffect(()=>{
-  CartData.length>0 ? setDataAvail(true): setDataAvail(false)
+  CartData.length !=0 ? setDataAvail(true): setDataAvail(false)
 
  },[CartData,dataAvail])
  
@@ -38,7 +40,10 @@ const [dataAvail,setDataAvail] = useState(false)
  },[])
  const [showDeliveryForm,setShowDeliveryForm] = useState(false)
 
- 
+ const loading = useSelector((state)=>state.AppReducer.notLoading)
+ if(loading === false){
+  return <Loading/>
+ }
   return (
     <>
     {dataAvail ?
