@@ -118,7 +118,7 @@ The project repository can be found in [GitHub link](https://github.com/ArjunSin
 ```
 Using HTTPS
 
-# git clone https://github.com/m-sehrawat/Nike-Clone.git
+# git clone https://github.com/ArjunSinghBhakuni/Nike-Clone.git
 ```
  
 
