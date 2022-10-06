@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   chakra,
@@ -19,10 +19,10 @@ import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
- 
- import "./product.css"
+
+import "./product.css";
 import { addCartData, getCartData } from "../../redux/AppReducer/action";
-import { FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingCart } from "react-icons/fi";
 import { setToast } from "../../utilties/toastfun";
 const ToolTip = styled.i`
   font-size: 12px;
@@ -100,96 +100,34 @@ const CardCount = styled.div`
 //   brand: ,
 // };
 
+const AllProduct = ({
+  title,
+  description,
+  category,
+  price,
+  size,
+  color,
+  rating,
+  img,
+  _id,
+}) => {
+  const dispatch = useDispatch();
+  const isLoaded = useSelector((state) => state.AppReducer.notLoading);
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
+  const toast = useToast();
+  const navigate = useNavigate()
+  const handleCart = (id) => {
+    if(!isAuth){
+      setToast(toast, "Please login first", "error");
+      navigate("/login")
+return
+    }
+    setToast(toast, "Product Added to cart", "success");
 
+    dispatch(addCartData(id)).then((res) => dispatch(getCartData()));
+  };
 
-const AllProduct = ({ title,description,category,price,size,color,rating,img,_id }) => {
-  const dispatch = useDispatch()
-  const isLoaded = useSelector((state)=>state.AppReducer.notLoading)
-const toast = useToast()
- const handleCart =(id)=>{
-  setToast(toast, 'Product Added to cart', 'success');
-
-  dispatch(addCartData(id)).then((res)=>dispatch(getCartData()))
- }
-
-  
-  // const [countValue, setCountValue] = useState(0);
-  // const { id } = useParams();
-  // const dispatch = useDispatch();
-  // const {
-  //   data: cartData,
-  //   getCartItems,
-  //   addCartItem,
-  //   updateCartItem,
-  // } = useSelector((state) => state.cart);
-
-  // const handleAddToCart = (item) => {
-  //   const addData = {
-  //     _productId: item._id,
-  //     productName: item.productName,
-  //     count: 1,
-  //     prodHighlights: item.prodHighlights,
-  //     longDesc: item.longDesc,
-  //     imageUrl: item.imageUrl,
-  //     shortDesc: item.shortDesc,
-  //     ratings: item.ratings,
-  //     numberOfRatings: item.numberOfRatings,
-  //     strikedPrice: item.strikedPrice,
-  //     price: item.price,
-  //     discount: item.discount,
-  //     brand: item.brand,
-  //   };
-  //   let ans = cartData.filter((data) => data._productId == item._id);
-  //   // console.log("ans is:", ans);
-  //   if (ans.length === 0) {
-  //     dispatch(addItemToCartAPI(addData));
-  //   }
-  // };
-
-  // const handleUpdate = (id, value) => {
-  //   let update = cartData.filter((data) => data._productId == id);
-  //   // let ans = cartData.find(someobject => someobject.productId == id).count = 10;
-  //   // console.log(update[0]);
-  //   // console.log("id:", ans)
-
-  //   if (value == 0) {
-  //     dispatch(removeItemFromCartAPI(update[0]._id));
-  //   } else if (update.length !== 0) {
-  //     const payload = {
-  //       cartId: update[0]._id,
-  //       _productId: update[0]._productId,
-  //       newCount: value,
-  //     };
-  //     dispatch(updateCartItemAPI(payload));
-  //   }
-  // };
-
-  // // below function is used to remove cart item,
-  // // In this all products page remove button is not available
-  // // it will be used in cart page and single product page
-  // const handleRemoveFromCart = (value) => {
-  //   let remove = cartData.filter((data) => data._productId == value);
-  //   // console.log("ans is:", remove,remove[0]?.id);
-  //   if (remove.length !== 0) {
-  //     // console.log(remove.id);
-  //     dispatch(removeItemFromCartAPI(remove[0]._id));
-  //   }
-  // };
-
-  // //Below useEffect is used to fetch count of cart item
-  // useEffect(() => {
-  //   const getCount = () => {
-  //     let ans = cartData.filter((data) => data._productId == product._id);
-  //     return ans[0] ? ans[0]?.count : 0;
-  //   };
-  //   setCountValue(Number(getCount()));
-  // }, [product, cartData]);
-  // // let username = useSelector((state) => state.name);
-  // // const dispatch = useDispatch();
-  // // useEffect(() => {
-  // //   dispatch(fetchdes(id));
-  // // }, [id, dispatch]);
-
+ 
   return (
     <Box
       border={"1px solid #eee"}
@@ -206,27 +144,19 @@ const toast = useToast()
     >
       <Box
         width="100%"
-        h="100%"
+        h="90%"
         margin="auto"
-        
         bg={"white"}
         rounded={4}
         position={"relative"}
         className="productsImg"
+       
       >
-        <Link
-          to={`/products/${_id}`}
-          style={{ textDecoration: "none" }}
-        >
-          <Image
-            src={img[0]}
-   
-         
-          />
+        <Link to={`/products/${_id}`} style={{ textDecoration: "none" }}>
+          <Image    src={img[0]} />
         </Link>
       </Box>
       <Box
-
         p="10px 0px"
         // border={"1px solid blue"}
         fontSize="20px"
@@ -331,15 +261,22 @@ const toast = useToast()
             <Text fontSize={"16px"}> {price}</Text>
           </Flex>
           <Tooltip
-             label="Add to cart"
-             bg="white"
-             placement={'top'}
-             color={'gray.800'}
-             fontSize={'1.2em'}>
-             <chakra.a   display={'flex'}>
-               <Icon onClick={()=>handleCart(_id)} as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-             </chakra.a>
-           </Tooltip>
+            label="Add to cart"
+            bg="white"
+            placement={"top"}
+            color={"gray.800"}
+            fontSize={"1.2em"}
+          >
+            <chakra.a display={"flex"}>
+              <Icon
+                onClick={() => handleCart(_id)}
+                as={FiShoppingCart}
+                h={7}
+                w={7}
+                alignSelf={"center"}
+              />
+            </chakra.a>
+          </Tooltip>
           {/* <Stack>
             {countValue == 0 ? (
               <AddToCartBtn

@@ -2,21 +2,20 @@ import { Box, Flex, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 
-export const CheckoutForm = () => {
-const [form ,setForm] = useState({})
+export const CheckoutForm = ({ checkoutForm,setCheckoutForm}) => {
+ 
  const onChange =(e)=>{
 const {name,value} = e.target
 
-setForm({
- ...form,
- [name]:value,
-})
- }
-
- const handleFormSubmit =(e)=>{
-e.preventDefault();
+ 
+setCheckoutForm({
+    ...checkoutForm,
+    [name]:value,
+   })
 
  }
+
+ 
     return (
         <>
             <Box>

@@ -18,67 +18,71 @@ import { NewButton } from "../../components/description/NewButton";
 import { useEffect, useState } from "react";
 
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { addCartData, getCartData ,getProductsData} from "../../redux/AppReducer/action";
+import {
+  addCartData,
+  getCartData,
+  getProductsData,
+} from "../../redux/AppReducer/action";
 import axios from "axios";
 import { setToast } from "../../utilties/toastfun";
 
 export const Description = () => {
   const [mySize, setMySize] = useState(false);
-//   const dispatch = useDispatch();
-  const product = useSelector((state)=>state.AppReducer.products)
-//   const [singleProduct, setSingleProduct] = useState({});
- 
-//   const { id } = useParams();
-//   console.log("id",id)
-//   const location = useLocation();
-//  // console.log(location);
-//   useEffect(() => {
-//     if (product?.length === 0) {
-//       dispatch(getProductsData());;
-//     }
-//   }, []);
+  //   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
 
-//   useEffect(() => {
-//     if (id) {
-//       const temp = product?.find((el) => el._id == (id));
-//       console.log("temp",temp)
-//       temp && setSingleProduct(temp);
-//     }
-//   }, [product, id, location]);
+  const navigate = useNavigate();
+  const product = useSelector((state) => state.AppReducer.products);
+  //   const [singleProduct, setSingleProduct] = useState({});
 
-  
-  
+  //   const { id } = useParams();
+  //   console.log("id",id)
+  //   const location = useLocation();
+  //  // console.log(location);
+  //   useEffect(() => {
+  //     if (product?.length === 0) {
+  //       dispatch(getProductsData());;
+  //     }
+  //   }, []);
+
+  //   useEffect(() => {
+  //     if (id) {
+  //       const temp = product?.find((el) => el._id == (id));
+  //       console.log("temp",temp)
+  //       temp && setSingleProduct(temp);
+  //     }
+  //   }, [product, id, location]);
+
   const { id } = useParams();
- 
+
   const dispatch = useDispatch();
   const isLoaded = useSelector((state) => state.AppReducer.notLoading);
 
-
   useEffect(() => {
-    
-      dispatch(getProductsData());
-  
+    dispatch(getProductsData());
   }, []);
 
- 
-  const [singleProduct]  = product?.filter((e)=>e._id===id)
- 
-const toast = useToast()
+  const [singleProduct] = product?.filter((e) => e._id === id);
+
+  const toast = useToast();
+
   const handleCart = (id) => {
+    if (!isAuth) {
+      setToast(toast, "Please login first", "error");
+      navigate("/login");
+      return;
+    }
     if (mySize === false) {
       setToast(toast, "Please select a Size", "error");
-  } else{
-    setToast(toast, "Product Add to cart", "success");
-    dispatch(addCartData(id)).then((res) => dispatch(getCartData()));
-
-  }
-   
+    } else {
+      setToast(toast, "Product Add to cart", "success");
+      dispatch(addCartData(id)).then((res) => dispatch(getCartData()));
+    }
   };
 
- 
   const handleAddToFavourite = () => {
     setToast(toast, "Availble Soon", "warning");
-    
+
     // if (!token) {
     //     setToast(toast, 'Please login first', 'error');
     //     navigate('/auth');
@@ -115,48 +119,41 @@ const toast = useToast()
             Select Size
           </Text>
           <Box mb={"30px"}>
-            <SelectSize size={singleProduct?.size}    setMySize={setMySize} />
+            <SelectSize size={singleProduct?.size} setMySize={setMySize} />
           </Box>
 
-          <Button 
-           h={"62px"}
-         
-           border={`1px solidtransparent`}
-           borderRadius={"50px"}
-           w={"100%"}
-           fontSize={"17px"}
-           my={"10px"}
-           _hover={{ bg: "#1e1e1e", borderColor: "white" }}
+          <Button
+            h={"62px"}
+            border={`1px solidtransparent`}
+            borderRadius={"50px"}
+            w={"100%"}
+            fontSize={"17px"}
+            my={"10px"}
+            _hover={{ bg: "#1e1e1e", borderColor: "white" }}
             bgColor={"black"}
             color={"white"}
             hoverBg={"#1e1e1e"}
             borderColor={"transparent"}
-        onClick={() => handleCart(singleProduct?._id)}>
-          Add to Bag
+            onClick={() => handleCart(singleProduct?._id)}
+          >
+            Add to Bag
           </Button>
-          <Button 
-           bgColor={"white"}
-           color={"black"}
-           hoverBorder={"black"}
-           borderColor={"#cecdce"}
-           h={"62px"}
-         
-           border={`1px solid black`}
-           borderRadius={"50px"}
-           w={"100%"}
-           fontSize={"17px"}
-           my={"10px"}
-           _hover={{ bg: "#white", borderColor: "white" }}
-         
-      
-         
-       
-        onClick={handleAddToFavourite}>
-       Faviourite
+          <Button
+            bgColor={"white"}
+            color={"black"}
+            hoverBorder={"black"}
+            borderColor={"#cecdce"}
+            h={"62px"}
+            border={`1px solid black`}
+            borderRadius={"50px"}
+            w={"100%"}
+            fontSize={"17px"}
+            my={"10px"}
+            _hover={{ bg: "#white", borderColor: "white" }}
+            onClick={handleAddToFavourite}
+          >
+            Faviourite
           </Button>
-            
-       
-        
 
           <Divider my={"30px"} />
 

@@ -15,15 +15,18 @@ import {
   Link,
   Radio,
   RadioGroup,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import {  signupUser } from "../../redux/AuthReducer/action";
 import {Link as RouterLink, useNavigate } from "react-router-dom";
+import { setToast } from "../../utilties/toastfun";
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
   const [form, setForm] = useState({ firstName: "",
   lastName: "", 
   email: "",
@@ -31,7 +34,7 @@ export default function Signup() {
   gender: "",});
 
   const dispatch = useDispatch()
-
+const toast = useToast()
   const handleFormChange = (e) => {
   
     const { name, value  } = e.target;
@@ -41,25 +44,35 @@ export default function Signup() {
       [name]:value,
      });
   };
-  const navigate = useNavigate()
 
   const handleSubmit = (Event) => {
     Event.preventDefault();
-     
-    dispatch(signupUser(form)).then((r)=> 
-    {
+ 
+    if(form.firstName  && form.lastName && form.email && form.password  &&  form.gender){
 
-      setForm({
-        firstName: "",
-      lastName: "", 
-      email: "",
-      password: "", 
-      gender: "",
-    })
-    navigate('/login')
-  } 
-    )
-    .catch((err) => console.log( err))
+  dispatch(signupUser(form)).then((r)=> 
+  {
+    setToast(toast, "Singup Success", "success");
+    setForm({
+      firstName: "",
+    lastName: "", 
+    email: "",
+    password: "", 
+    gender: "",
+  })
+  navigate('/login')
+ 
+} 
+
+  )
+  .catch((err) => console.log( err))
+}    else {
+  
+  setToast(toast, "Please fill the Valid Details", "error");
+} 
+ 
+     
+ 
    
   };
   return (
@@ -74,9 +87,7 @@ export default function Signup() {
           <Heading fontSize={"4xl"} textAlign={"center"}>
             Sign up
           </Heading>
-          <Text fontSize={"lg"} color={"gray.600"}>
-            to enjoy all of our cool features ✌️
-          </Text>
+        
         </Stack>
         <Box
           rounded={"lg"}
@@ -159,12 +170,11 @@ export default function Signup() {
               <Button
                 loadingText="Submitting"
                 size="lg"
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-                onClick={handleSubmit}
+             
+              color="white"
+              backgroundColor={"black"}
+               
+                onClick={()=>handleSubmit()}
               >
                 Sign up
               </Button>

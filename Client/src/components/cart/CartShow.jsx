@@ -46,20 +46,7 @@ const toast = useToast()
   };
 
   return (
-    //     <Flex marginTop={5}>
-    // <Image src={img[0]} h="150px" />
-
-    // <Stack>
-    //  <Heading as={"h3"} size="m" >{title}</Heading>
-    //  <Text >rs {price}</Text>
-    //  <HStack>
-    //   <Button onClick={()=>handleChange(_id,"dec")}size={"sm"}>-</Button>
-    // <Text>{count}</Text>
-    //   <Button onClick={()=>handleChange(_id,"inc")} size={"sm"}>+</Button>
-    //  </HStack>
-    // </Stack>
-    //     </Flex>
-
+   
     <>
       <Box
                my={"15px"}
@@ -72,7 +59,7 @@ const toast = useToast()
                        w={["80px", "80px", "150px", "150px", "150px"]}
             h={["80px", "80px", "150px", "150px", "150px"]}
           >
-            <Image h={"100%"} src={img[0]} />
+            <Image h={"85%"} src={img[0]} />
           </Box>
 
           <Box

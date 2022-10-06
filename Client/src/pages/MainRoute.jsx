@@ -28,7 +28,12 @@ const MainRoute = () => {
       <Route path='/signup' element={<Signup/>} />
       <Route path='/login' element={<Login/>} />
       <Route path='/products/:id' element={<Description/>} />
-      <Route path='/cart' element={<Cart/>} />
+      <Route path='/cart' element={
+       <PrivateRoute>
+        
+      <Cart/>
+       </PrivateRoute>
+      } />
       <Route path='/checkout' element={
       <PrivateRoute>
 

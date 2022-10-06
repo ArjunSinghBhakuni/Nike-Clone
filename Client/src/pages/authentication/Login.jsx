@@ -10,13 +10,16 @@ import {
  Stack,
  Image,
  Text,
+ useToast,
 } from '@chakra-ui/react';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/AuthReducer/action';
 import {Link as RouterLink,useNavigate} from "react-router-dom"
+import { setToast } from '../../utilties/toastfun';
 export default function Login() {
+  const toast = useToast()
   const [email,setEmail] = useState("123@gmail.com")
   const [password,setPassword] = useState("123")
 const navigate = useNavigate()
@@ -26,10 +29,17 @@ const payload ={
   email,
   password
 }
-dispatch(loginUser(payload)).then((r)=> 
+if(email && password){
 
-navigate("/products")
-)
+  dispatch(loginUser(payload)).then((r)=> {
+
+    setToast(toast, "Login Success", "success");
+    navigate("/products")
+  }
+  )
+}else{
+  setToast(toast, "Please fill the Valid Details", "error");
+}
   }
  return (
    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
@@ -38,7 +48,7 @@ navigate("/products")
          alt={'Login Image'}
          objectFit={'cover'}
          src={
-           'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'
+           'https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/24dd0e6b-6d18-4b8e-8abc-e510fe3dfbc9/nike-just-do-it.jpg'
          }
        />
      </Flex>
@@ -54,14 +64,8 @@ navigate("/products")
            <Input value={password} type="password"  onChange={(e)=>setPassword(e.target.value)} />
          </FormControl>
          <Stack spacing={6}>
-           <Stack
-             direction={{ base: 'column', sm: 'row' }}
-             align={'start'}
-             justify={'space-between'}>
-             <Checkbox>Remember me</Checkbox>
-             <Link color={'blue.500'}>Forgot password?</Link>
-           </Stack>
-           <Button colorScheme={'blue'} variant={'solid'} 
+          
+           <Button bgColor={'black'} color={"white"}   
            onClick={handleSubmit}
            >
              Sign in
